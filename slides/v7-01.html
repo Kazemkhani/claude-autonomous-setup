@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: linear-gradient(
+          135deg,
+          #e0f2fe 0%,
+          #f0fdfa 50%,
+          #fef3c7 100%
+        );
+        color: #0c4a6e;
+        overflow: hidden;
+      }
+      body {
+        padding: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .steam1 {
+        position: absolute;
+        top: -100px;
+        left: -50px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          closest-side,
+          rgba(255, 255, 255, 0.7),
+          transparent 70%
+        );
+        filter: blur(40px);
+      }
+      .steam2 {
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          closest-side,
+          rgba(167, 243, 208, 0.6),
+          transparent 70%
+        );
+        filter: blur(50px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: #0891b2;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 128px;
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #0c4a6e;
+        margin-bottom: 32px;
+        font-family:
+          -apple-system-rounded,
+          -apple-system,
+          sans-serif;
+      }
+      h1 em {
+        font-style: italic;
+        color: #0891b2;
+      }
+      .sub {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #155e75;
+        max-width: 880px;
+      }
+      .sub strong {
+        color: #0c4a6e;
+        font-weight: 700;
+      }
+      .timestamp {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 24px;
+        border-radius: 30px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(8, 145, 178, 0.2);
+        font-size: 18px;
+        color: #0e7490;
+        font-weight: 600;
+        margin-top: 36px;
+        backdrop-filter: blur(8px);
+      }
+      .timestamp .dot {
+        width: 10px;
+        height: 10px;
+        background: #22d3ee;
+        border-radius: 50%;
+        box-shadow: 0 0 12px rgba(34, 211, 238, 0.6);
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 18px;
+        color: #155e75;
+      }
+      .brand {
+        font-weight: 700;
+        color: #0e7490;
+      }
+      .swipe {
+        font-weight: 600;
+        color: #0891b2;
+      }
+      .swipe::after {
+        content: " →";
+        color: #22d3ee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="steam1"></div>
+    <div class="steam2"></div>
+    <div class="content">
+      <div class="eyebrow">Tuesday · 7:14 AM</div>
+      <h1>I was in the<br /><em>shower.</em></h1>
+      <div class="sub">
+        My phone buzzed:
+        <strong>"Refactored 3 files. Deduped 47 lines. All tests pass."</strong>
+        Claude shipped a PR while shampoo was still in my hair.
+      </div>
+      <div class="timestamp">
+        <div class="dot"></div>
+        Real story · last Tuesday
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Swipe</div>
+    </div>
+  </body>
+</html>

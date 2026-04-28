@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fdf6e3;
+        color: #3a2818;
+        overflow: hidden;
+        font-family: "Times New Roman", "Garamond", Georgia, serif;
+      }
+      body {
+        padding: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(120, 90, 30, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 18px 18px;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-size: 18px;
+        color: #a16207;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 32px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 48px;
+        height: 2px;
+        background: #a16207;
+        vertical-align: middle;
+        margin-right: 18px;
+        margin-bottom: 6px;
+      }
+      .pull {
+        font-size: 96px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #1a1814;
+        margin-bottom: 36px;
+        font-style: italic;
+      }
+      .pull span {
+        display: block;
+        color: #a16207;
+        font-style: normal;
+      }
+      .body {
+        font-size: 28px;
+        color: #3a2818;
+        line-height: 1.5;
+        max-width: 880px;
+        margin-bottom: 48px;
+        font-style: italic;
+      }
+      .body strong {
+        color: #1a1814;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 22px 44px;
+        background: #1a1814;
+        color: #fdf6e3;
+        border-radius: 6px;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .cta::after {
+        content: "→";
+        color: #fbbf24;
+      }
+      .byline {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 14px;
+        color: #78350f;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .brand {
+        color: #a16207;
+      }
+      .end {
+        color: #1a1814;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <div class="content">
+      <div class="eyebrow">In closing</div>
+      <div class="pull">Lower the floor.<span>Not the ceiling.</span></div>
+      <div class="body">
+        <strong>This isn't about replacing developers.</strong> It's about
+        lowering the floor of who can build. More product diversity. Fewer "big
+        bets." More 1-person SaaS. The era of expensive software is dying
+        because expensive labor is no longer required to ship it.
+      </div>
+      <div class="cta">read more on amirkazemkhani.com</div>
+    </div>
+    <div class="byline">
+      <div class="brand">amir@amirkazemkhani.com · @amirhkazemkhani</div>
+      <div class="end">— Fin</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: linear-gradient(135deg, #f0fdfa 0%, #e0f2fe 100%);
+        color: #0c4a6e;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .steam {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        height: 800px;
+        background: radial-gradient(
+          ellipse,
+          rgba(255, 255, 255, 0.6),
+          transparent 70%
+        );
+        filter: blur(40px);
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 62px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #0c4a6e;
+        margin-bottom: 32px;
+        font-family:
+          -apple-system-rounded,
+          -apple-system,
+          sans-serif;
+      }
+      h1 em {
+        font-style: italic;
+        color: #0891b2;
+      }
+      .body {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        flex: 1;
+        justify-content: center;
+      }
+      .row {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px 28px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(8, 145, 178, 0.18);
+        backdrop-filter: blur(8px);
+      }
+      .icon {
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #67e8f9, #a7f3d0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+      .text {
+        flex: 1;
+      }
+      .text strong {
+        display: block;
+        font-size: 22px;
+        color: #0c4a6e;
+        margin-bottom: 6px;
+        font-weight: 800;
+      }
+      .text span {
+        display: block;
+        font-size: 18px;
+        color: #155e75;
+        line-height: 1.45;
+      }
+      .tag {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-size: 24px;
+        color: #0e7490;
+        margin-top: 24px;
+        font-weight: 600;
+        font-style: italic;
+      }
+      .tag em {
+        font-style: normal;
+        color: #0891b2;
+        font-weight: 800;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        color: #155e75;
+        margin-top: 24px;
+      }
+      .brand {
+        font-weight: 700;
+        color: #0e7490;
+      }
+      .page {
+        font-weight: 600;
+        color: #0891b2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="steam"></div>
+    <h1>What AI agents are <em>actually for</em>.</h1>
+    <div class="body">
+      <div class="row">
+        <div class="icon">🧹</div>
+        <div class="text">
+          <strong>The chores that drain hours</strong
+          ><span
+            >Refactors. Migrations. Type fixes. DRY-ups. Documentation
+            updates.</span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="icon">⏰</div>
+        <div class="text">
+          <strong>The work you put off</strong
+          ><span
+            >That dependency upgrade. The README rewrite. The test coverage
+            backfill.</span
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="icon">🎯</div>
+        <div class="text">
+          <strong>The tasks with a clear "done"</strong
+          ><span
+            >"Find duplicate utils and merge them" is a perfect agent prompt. So
+            is "add JSDoc to every export."</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="tag">
+      You don't need <em>AGI</em>. You need a focused agent with a tight
+      definition of done.
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

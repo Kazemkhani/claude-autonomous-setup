@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", "SF Mono", monospace;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #1c1f1a;
+        color: #f5f1e8;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .tape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 36px;
+        background: repeating-linear-gradient(
+          90deg,
+          #f97316,
+          #f97316 20px,
+          #1c1f1a 20px,
+          #1c1f1a 40px
+        );
+        opacity: 0.85;
+      }
+      .bottom-tape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #f97316;
+      }
+      .stamp {
+        position: absolute;
+        top: 80px;
+        right: 80px;
+        width: 200px;
+        height: 60px;
+        border: 3px solid #f97316;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f97316;
+        font-weight: 900;
+        font-size: 18px;
+        letter-spacing: 0.15em;
+        transform: rotate(-4deg);
+        text-transform: uppercase;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 36px;
+      }
+      .eyebrow {
+        font-size: 18px;
+        color: #f97316;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 24px;
+      }
+      .eyebrow::before {
+        content: "// ";
+      }
+      h1 {
+        font-size: 108px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #f5f1e8;
+        margin-bottom: 32px;
+        font-family: -apple-system, "Inter", sans-serif;
+        text-transform: uppercase;
+      }
+      h1 em {
+        font-style: italic;
+        color: #f97316;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .callsign {
+        display: inline-flex;
+        align-self: flex-start;
+        padding: 10px 18px;
+        background: rgba(249, 115, 22, 0.12);
+        border: 1px dashed #f97316;
+        color: #fdba74;
+        font-size: 14px;
+        letter-spacing: 0.15em;
+        font-weight: 700;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+      }
+      .sub {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #d6d3d1;
+        max-width: 920px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .sub strong {
+        color: #f5f1e8;
+        font-weight: 700;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 14px;
+        color: #a8a29e;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .brand {
+        color: #fdba74;
+      }
+      .swipe {
+        color: #f97316;
+      }
+      .swipe::after {
+        content: " >>";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tape"></div>
+    <div class="bottom-tape"></div>
+    <div class="stamp">field manual</div>
+    <div class="content">
+      <div class="callsign">[BRIEFING #019 · SOLO-OPS]</div>
+      <div class="eyebrow">objective</div>
+      <h1>3 hooks every<br />solo founder<br /><em>needs.</em></h1>
+      <div class="sub">
+        <strong>Defense in depth is a $0 upgrade.</strong> The 3 settings.json
+        hooks that saved me from pushing to main 4 times this month.
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Continue</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fef9e7;
+        color: #1c1917;
+        overflow: hidden;
+      }
+      body {
+        padding: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 30px,
+          rgba(28, 25, 23, 0.04) 30px,
+          rgba(28, 25, 23, 0.04) 31px
+        );
+      }
+      .stamp {
+        position: absolute;
+        top: 80px;
+        right: 80px;
+        width: 240px;
+        height: 80px;
+        border: 4px solid #dc2626;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #dc2626;
+        font-weight: 900;
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        transform: rotate(-8deg);
+        font-family: "Courier New", monospace;
+        opacity: 0.85;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .kicker {
+        font-size: 18px;
+        color: #78716c;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        font-weight: 700;
+        font-family: "Courier New", monospace;
+      }
+      h1 {
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #1c1917;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+      }
+      h1 em {
+        font-style: italic;
+        color: #dc2626;
+        text-transform: none;
+      }
+      .body {
+        font-size: 30px;
+        color: #44403c;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 880px;
+        margin-bottom: 48px;
+      }
+      .body strong {
+        color: #1c1917;
+        font-weight: 800;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 22px 44px;
+        background: #1c1917;
+        color: #fef9e7;
+        border-radius: 8px;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .cta::after {
+        content: "→";
+        color: #dc2626;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #78716c;
+        font-family: "Courier New", monospace;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .page {
+        font-weight: 700;
+        color: #dc2626;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <div class="stamp">cancelled</div>
+    <div class="content">
+      <div class="kicker">// take action</div>
+      <h1>Audit your<br /><em>stack</em> this weekend.</h1>
+      <div class="body">
+        <strong
+          >The big AI lab subscriptions cover 80% of what vertical AI tools
+          sell.</strong
+        >
+        Open your billing page. Find the duplicates. Cancel. Reroute the savings
+        into Claude Max.
+      </div>
+      <div class="cta">amirkazemkhani.com</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>

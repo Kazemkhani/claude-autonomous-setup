@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #0a0014;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .bg-pink {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1300px;
+        height: 1300px;
+        background: radial-gradient(
+          closest-side,
+          rgba(236, 72, 153, 0.18),
+          rgba(168, 85, 247, 0.12) 50%,
+          transparent 75%
+        );
+        filter: blur(60px);
+      }
+      .scanlines {
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 4px,
+          rgba(255, 255, 255, 0.02) 4px,
+          rgba(255, 255, 255, 0.02) 5px
+        );
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 54px;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.03em;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+      }
+      h1 em {
+        font-style: italic;
+        background: linear-gradient(135deg, #fbbf24, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .quotes {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        flex: 1;
+        justify-content: center;
+      }
+      .quote {
+        padding: 24px 28px;
+        border-radius: 14px;
+        background: rgba(236, 72, 153, 0.06);
+        border: 1px solid rgba(236, 72, 153, 0.3);
+        position: relative;
+        backdrop-filter: blur(8px);
+      }
+      .quote::before {
+        content: '"';
+        position: absolute;
+        top: -20px;
+        left: 18px;
+        font-size: 80px;
+        color: #ec4899;
+        font-weight: 900;
+        text-shadow: 0 0 24px rgba(236, 72, 153, 0.6);
+        line-height: 1;
+      }
+      .quote p {
+        font-size: 22px;
+        line-height: 1.45;
+        color: #fff;
+        font-weight: 500;
+        font-style: italic;
+      }
+      .quote p strong {
+        color: #fbbf24;
+        font-weight: 800;
+        font-style: normal;
+      }
+      .tag {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-size: 22px;
+        color: #fbcfe8;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+      .tag em {
+        font-style: normal;
+        color: #fbbf24;
+        font-weight: 800;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        color: #a78bfa;
+        margin-top: 20px;
+      }
+      .brand {
+        font-weight: 700;
+        color: #fbcfe8;
+      }
+      .page {
+        font-weight: 900;
+        color: #fbbf24;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-pink"></div>
+    <div class="scanlines"></div>
+    <h1>The <em>greatest hits.</em></h1>
+    <div class="quotes">
+      <div class="quote">
+        <p>
+          Your auth flow is suspicious. Not in a bad way. In a
+          <strong
+            >"why are there 4 different ways to log in but only one
+            logout"</strong
+          >
+          way.
+        </p>
+      </div>
+      <div class="quote">
+        <p>
+          You have a folder called <strong>`utils`</strong> and a folder called
+          <strong>`helpers`</strong>. They contain the same things. Pick one and
+          commit.
+        </p>
+      </div>
+      <div class="quote">
+        <p>
+          Your test coverage is 73%. Your <strong>test usefulness</strong> is
+          12%. The numbers were lower than I expected.
+        </p>
+      </div>
+      <div class="quote">
+        <p>
+          You have <strong>TODO comments from October</strong>. Your last commit
+          was yesterday.
+        </p>
+      </div>
+    </div>
+    <div class="tag">
+      An AI with <em>no ego</em> says the things your senior dev won't.
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

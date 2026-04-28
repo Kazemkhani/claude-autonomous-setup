@@ -20,8 +20,21 @@ for (let i = 1; i <= 5; i++) {
   console.log(`rendered slide-${n}.png`);
 }
 
-// Variation-specific carousels: v2 (hierarchy), v3 (voice), v4 (cost), v5 (lessons), v6 (market window)
-for (const setName of ["v2", "v3", "v4", "v5", "v6"]) {
+// Variation-specific carousels: v2-v6 (Phase 1 variations), v7-v13 (Phase 2 unique sets)
+for (const setName of [
+  "v2",
+  "v3",
+  "v4",
+  "v5",
+  "v6",
+  "v7",
+  "v8",
+  "v9",
+  "v10",
+  "v11",
+  "v12",
+  "v13",
+]) {
   for (let i = 1; i <= 3; i++) {
     const n = String(i).padStart(2, "0");
     const url = "file://" + join(__dirname, "slides", `${setName}-${n}.html`);

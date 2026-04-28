@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fdf6e3;
+        color: #3a2818;
+        overflow: hidden;
+        font-family: "Times New Roman", "Garamond", Georgia, serif;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(120, 90, 30, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 18px 18px;
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 54px;
+        font-weight: 700;
+        color: #1a1814;
+        letter-spacing: -0.02em;
+        margin-bottom: 36px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      h1 em {
+        font-style: italic;
+        color: #a16207;
+      }
+      .compare {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        flex: 1;
+        align-items: center;
+      }
+      .col {
+        padding: 36px 32px;
+        border: 2px solid #a16207;
+        border-radius: 18px;
+        background: rgba(161, 98, 7, 0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 560px;
+      }
+      .col.solo {
+        background: rgba(161, 98, 7, 0.12);
+        border-color: #a16207;
+      }
+      .col-label {
+        font-size: 18px;
+        color: #78350f;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 24px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .team-num {
+        font-size: 108px;
+        color: #dc2626;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+      .solo-num {
+        font-size: 108px;
+        color: #15803d;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+      .unit {
+        font-size: 22px;
+        color: #78350f;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        font-family: -apple-system, "Inter", sans-serif;
+        margin-bottom: 24px;
+      }
+      .detail {
+        font-size: 18px;
+        color: #3a2818;
+        line-height: 1.5;
+        font-style: italic;
+      }
+      .detail strong {
+        font-style: normal;
+        font-weight: 700;
+        color: #1a1814;
+      }
+      .divider {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        margin-top: 24px;
+        font-size: 24px;
+        color: #a16207;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .divider em {
+        font-size: 36px;
+        font-style: italic;
+        color: #dc2626;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #78350f;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 24px;
+      }
+      .brand {
+        color: #a16207;
+      }
+      .page {
+        color: #1a1814;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <h1>The <em>math.</em></h1>
+    <div class="compare">
+      <div class="col">
+        <div class="col-label">Team of 10</div>
+        <div class="team-num">$200k</div>
+        <div class="unit">/ quarter</div>
+        <div class="detail">
+          Salaries + overhead + benefits + tools + management overhead. Ships
+          <strong>X features</strong>.
+        </div>
+      </div>
+      <div class="col solo">
+        <div class="col-label">Solo + AI</div>
+        <div class="solo-num">$3k</div>
+        <div class="unit">/ quarter</div>
+        <div class="detail">
+          Tools + cloud + Claude Max sub. Ships <strong>X features</strong>.
+        </div>
+      </div>
+    </div>
+    <div class="divider">~<em>70x</em> cost gap. Same output.</div>
+    <div class="footer">
+      <div class="brand">amirkazemkhani.com</div>
+      <div class="page">02</div>
+    </div>
+  </body>
+</html>

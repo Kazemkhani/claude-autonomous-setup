@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", "SF Mono", monospace;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #1c1f1a;
+        color: #f5f1e8;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .tape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 36px;
+        background: repeating-linear-gradient(
+          90deg,
+          #f97316,
+          #f97316 20px,
+          #1c1f1a 20px,
+          #1c1f1a 40px
+        );
+        opacity: 0.85;
+      }
+      .bottom-tape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #f97316;
+      }
+      .stamp {
+        position: absolute;
+        top: 80px;
+        right: 80px;
+        width: 240px;
+        height: 80px;
+        border: 4px solid #fbbf24;
+        color: #fbbf24;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+        transform: rotate(-6deg);
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 36px;
+      }
+      .eyebrow {
+        font-size: 16px;
+        color: #fdba74;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 24px;
+      }
+      .eyebrow::before {
+        content: "// ";
+      }
+      h1 {
+        font-size: 120px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        color: #f5f1e8;
+        margin-bottom: 36px;
+        font-family: -apple-system, "Inter", sans-serif;
+        text-transform: uppercase;
+      }
+      h1 em {
+        font-style: italic;
+        color: #f97316;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .body {
+        font-size: 28px;
+        color: #d6d3d1;
+        line-height: 1.4;
+        max-width: 880px;
+        margin-bottom: 48px;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 500;
+      }
+      .body strong {
+        color: #f5f1e8;
+        font-weight: 700;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 20px 40px;
+        background: #f97316;
+        color: #1c1f1a;
+        border-radius: 8px;
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .cta::after {
+        content: ">>";
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #a8a29e;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .brand {
+        color: #fdba74;
+      }
+      .page {
+        color: #f97316;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tape"></div>
+    <div class="bottom-tape"></div>
+    <div class="stamp">verified</div>
+    <div class="content">
+      <div class="eyebrow">debrief</div>
+      <h1>Saved me<br /><em>4 times</em><br />this month.</h1>
+      <div class="body">
+        <strong>Defense in depth.</strong> No production cost. Twenty lines of
+        bash. Hours of "oh god what did I just push" prevented.
+      </div>
+      <div class="cta">amirkazemkhani.com</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>

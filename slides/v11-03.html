@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fafaf5;
+        color: #0a0a0a;
+        overflow: hidden;
+        font-family: "Times New Roman", Georgia, serif;
+      }
+      body {
+        padding: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #0a0a0a;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .section {
+        font-size: 14px;
+        color: #525252;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .section span {
+        color: #dc2626;
+      }
+      .page-num {
+        font-size: 14px;
+        color: #525252;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .kicker {
+        font-size: 18px;
+        color: #dc2626;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 24px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .kicker::before {
+        content: "";
+        display: inline-block;
+        width: 48px;
+        height: 3px;
+        background: #dc2626;
+        vertical-align: middle;
+        margin-right: 18px;
+        margin-bottom: 6px;
+      }
+      .pull {
+        font-size: 104px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        margin-bottom: 36px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .pull em {
+        font-style: italic;
+        color: #dc2626;
+      }
+      .body {
+        font-size: 28px;
+        color: #262626;
+        font-style: italic;
+        line-height: 1.4;
+        max-width: 880px;
+        margin-bottom: 48px;
+      }
+      .body strong {
+        color: #0a0a0a;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 22px 44px;
+        background: #0a0a0a;
+        color: #fafaf5;
+        border-radius: 6px;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .cta::after {
+        content: "→";
+        color: #dc2626;
+      }
+      .byline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 14px;
+        color: #525252;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .brand {
+        color: #0a0a0a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="masthead">
+      <div class="section">The AI Brief · <span>Issue 01</span></div>
+      <div class="page-num">03</div>
+    </div>
+    <div class="content">
+      <div class="kicker">The bottom line</div>
+      <div class="pull">
+        Cancel half.<br />Reroute it<br />to <em>Claude Max.</em>
+      </div>
+      <div class="body">
+        <strong
+          >The big AI lab subscriptions cover what 80% of vertical AI tools
+          sell.</strong
+        >
+        Audit your stack this weekend. Move the savings into the model itself.
+      </div>
+      <div class="cta">read more on amirkazemkhani.com</div>
+    </div>
+    <div class="byline">
+      <div class="brand">amirkazemkhani.com · amir@amirkazemkhani.com</div>
+      <div>END</div>
+    </div>
+  </body>
+</html>

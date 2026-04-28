@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", "SF Mono", monospace;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fef9e7;
+        color: #1c1917;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 30px,
+          rgba(28, 25, 23, 0.04) 30px,
+          rgba(28, 25, 23, 0.04) 31px
+        );
+      }
+      .header {
+        position: relative;
+        z-index: 1;
+        font-size: 18px;
+        color: #78716c;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        margin-bottom: 32px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        flex: 1;
+        justify-content: center;
+      }
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 18px;
+        border-bottom: 1px dashed #a8a29e;
+      }
+      .item:last-child {
+        border-bottom: none;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .tool {
+        font-size: 30px;
+        font-weight: 800;
+        color: #1c1917;
+        text-decoration: line-through;
+        text-decoration-thickness: 3px;
+        text-decoration-color: #dc2626;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .reason {
+        font-size: 18px;
+        color: #44403c;
+        line-height: 1.4;
+        max-width: 680px;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 500;
+      }
+      .price {
+        font-size: 28px;
+        color: #dc2626;
+        font-weight: 800;
+        flex-shrink: 0;
+        margin-left: 24px;
+        font-family: "Courier New", monospace;
+      }
+      .total {
+        position: relative;
+        z-index: 1;
+        margin-top: 24px;
+        padding: 24px 28px;
+        border-top: 3px double #1c1917;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .total-label {
+        font-size: 24px;
+        color: #1c1917;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .total-num {
+        font-size: 44px;
+        color: #15803d;
+        font-weight: 900;
+        font-family: "Courier New", monospace;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #78716c;
+        margin-top: 24px;
+      }
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .page {
+        font-weight: 700;
+        color: #dc2626;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <div class="header">// itemized cancellations</div>
+    <div class="list">
+      <div class="item">
+        <div class="left">
+          <div class="tool">Cursor</div>
+          <div class="reason">
+            Claude Code matches it for free with my Max sub.
+          </div>
+        </div>
+        <div class="price">$20</div>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="tool">v0.dev</div>
+          <div class="reason">
+            Claude in headed Chromium does the same thing for $0.
+          </div>
+        </div>
+        <div class="price">$30</div>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="tool">Notion AI</div>
+          <div class="reason">
+            My CEO agent reads my repos better than Notion reads my docs.
+          </div>
+        </div>
+        <div class="price">$10</div>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="tool">Otter.ai</div>
+          <div class="reason">
+            whisper.cpp local is faster + private + free.
+          </div>
+        </div>
+        <div class="price">$20</div>
+      </div>
+      <div class="item">
+        <div class="left">
+          <div class="tool">Zapier paid plan</div>
+          <div class="reason">
+            MCP servers + scripts replace 80% of my Zaps.
+          </div>
+        </div>
+        <div class="price">$100</div>
+      </div>
+    </div>
+    <div class="total">
+      <div class="total-label">Saved monthly</div>
+      <div class="total-num">$180</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

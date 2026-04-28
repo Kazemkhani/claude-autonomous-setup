@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fafaf5;
+        color: #0a0a0a;
+        overflow: hidden;
+        font-family: "Times New Roman", "Playfair Display", Georgia, serif;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .masthead {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 18px;
+        border-bottom: 3px double #0a0a0a;
+        margin-bottom: 32px;
+      }
+      .title {
+        font-size: 44px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        color: #0a0a0a;
+      }
+      .title span {
+        color: #dc2626;
+        font-style: italic;
+      }
+      .meta {
+        font-size: 14px;
+        color: #525252;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .feature {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .kicker {
+        font-size: 18px;
+        color: #dc2626;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 24px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .kicker::before {
+        content: "";
+        display: inline-block;
+        width: 48px;
+        height: 3px;
+        background: #dc2626;
+        vertical-align: middle;
+        margin-right: 18px;
+        margin-bottom: 6px;
+      }
+      h1 {
+        font-size: 124px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        color: #0a0a0a;
+        margin-bottom: 32px;
+      }
+      h1 em {
+        font-style: italic;
+        color: #dc2626;
+      }
+      .dek {
+        font-size: 30px;
+        color: #262626;
+        font-style: italic;
+        line-height: 1.4;
+        max-width: 880px;
+        font-weight: 400;
+      }
+      .byline {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 16px;
+        color: #525252;
+        font-family: -apple-system, "Inter", sans-serif;
+        margin-top: 32px;
+        padding-top: 18px;
+        border-top: 1px solid #d4d4d8;
+      }
+      .byline strong {
+        color: #0a0a0a;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+      }
+      .swipe {
+        font-weight: 800;
+        color: #dc2626;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .swipe::after {
+        content: " →";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="masthead">
+      <div class="title">The <span>AI Brief</span></div>
+      <div class="meta">Issue 01 · Founder Edition</div>
+    </div>
+    <div class="feature">
+      <div class="kicker">Op-Ed · A Decision Framework</div>
+      <h1>
+        5 questions<br />before you<br /><em>add another</em><br />AI tool.
+      </h1>
+      <div class="dek">
+        Your Claude Max sub probably already does it. The simple test that saved
+        me $180/mo.
+      </div>
+    </div>
+    <div class="byline">
+      <div>
+        by <strong>AMIR HOSSEIN KAZEMKHANI</strong> · amirkazemkhani.com
+      </div>
+      <div class="swipe">Open</div>
+    </div>
+  </body>
+</html>

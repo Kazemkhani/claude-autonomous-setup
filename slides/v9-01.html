@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #0d1117;
+        color: #e6edf3;
+        overflow: hidden;
+      }
+      body {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .titlebar {
+        height: 56px;
+        background: #161b22;
+        border-bottom: 1px solid #30363d;
+        display: flex;
+        align-items: center;
+        padding: 0 22px;
+        gap: 10px;
+      }
+      .dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      }
+      .r {
+        background: #ff5f57;
+      }
+      .y {
+        background: #febc2e;
+      }
+      .g {
+        background: #28c840;
+      }
+      .path {
+        margin-left: 24px;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 14px;
+        color: #7d8590;
+      }
+      .path span {
+        color: #e6edf3;
+      }
+      .tabs {
+        display: flex;
+        background: #0d1117;
+        border-bottom: 1px solid #30363d;
+        padding: 0 22px;
+        height: 42px;
+        align-items: flex-end;
+        gap: 4px;
+      }
+      .tab {
+        padding: 8px 16px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: #7d8590;
+        border-radius: 6px 6px 0 0;
+        background: transparent;
+      }
+      .tab.active {
+        background: #0d1117;
+        color: #e6edf3;
+        border: 1px solid #30363d;
+        border-bottom: 1px solid #0d1117;
+        position: relative;
+        top: 1px;
+      }
+      .body {
+        flex: 1;
+        padding: 48px 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: #3fb950;
+        text-transform: uppercase;
+        margin-bottom: 28px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .eyebrow::before {
+        content: "// ";
+      }
+      h1 {
+        font-size: 104px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        margin-bottom: 32px;
+        color: #e6edf3;
+      }
+      h1 em {
+        font-style: italic;
+        color: #58a6ff;
+      }
+      h1 .grn {
+        color: #3fb950;
+      }
+      .sub {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.45;
+        color: #7d8590;
+        max-width: 920px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .sub strong {
+        color: #e6edf3;
+      }
+      .metric {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 22px;
+        border-radius: 6px;
+        background: rgba(63, 185, 113, 0.1);
+        border: 1px solid #3fb950;
+        color: #3fb950;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 18px;
+        font-weight: 700;
+        margin-top: 32px;
+      }
+      .footer {
+        padding: 24px 64px;
+        border-top: 1px solid #30363d;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #7d8590;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .brand {
+        color: #58a6ff;
+        font-weight: 700;
+      }
+      .swipe {
+        color: #3fb950;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="dot r"></div>
+      <div class="dot y"></div>
+      <div class="dot g"></div>
+      <div class="path">main → <span>review-pipeline.md</span></div>
+    </div>
+    <div class="tabs">
+      <div class="tab">README.md</div>
+      <div class="tab active">PR-Pipeline.md</div>
+      <div class="tab">CLAUDE.md</div>
+    </div>
+    <div class="body">
+      <div class="eyebrow">workflow</div>
+      <h1>How I review<br />PRs at <em>scale.</em></h1>
+      <div class="sub">
+        <strong>Spoiler:</strong> I don't. My agents do. I just sign off from a
+        Telegram thumb-tap. Here's the pipeline.
+      </div>
+      <div class="metric">~3-5 min from PR open to triaged review</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Swipe →</div>
+    </div>
+  </body>
+</html>

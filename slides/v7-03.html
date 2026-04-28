@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: linear-gradient(
+          135deg,
+          #fef3c7 0%,
+          #e0f2fe 50%,
+          #f0fdfa 100%
+        );
+        color: #0c4a6e;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .steam {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1300px;
+        height: 1100px;
+        background: radial-gradient(
+          closest-side,
+          rgba(255, 255, 255, 0.6),
+          rgba(167, 243, 208, 0.4) 50%,
+          transparent 75%
+        );
+        filter: blur(50px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .kicker {
+        font-size: 22px;
+        color: #0e7490;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 108px;
+        font-weight: 800;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        margin-bottom: 32px;
+        color: #0c4a6e;
+        font-family:
+          -apple-system-rounded,
+          -apple-system,
+          sans-serif;
+      }
+      h1 em {
+        font-style: italic;
+        color: #0891b2;
+      }
+      .body {
+        font-size: 30px;
+        color: #155e75;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 880px;
+        margin: 0 auto 56px;
+      }
+      .body strong {
+        color: #0c4a6e;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: center;
+        align-items: center;
+        gap: 16px;
+        padding: 24px 48px;
+        background: linear-gradient(135deg, #22d3ee, #0891b2);
+        color: #fff;
+        border-radius: 18px;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        box-shadow: 0 12px 40px rgba(8, 145, 178, 0.4);
+        font-family:
+          -apple-system-rounded,
+          -apple-system,
+          sans-serif;
+      }
+      .cta::after {
+        content: "→";
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        color: #155e75;
+      }
+      .brand {
+        font-weight: 700;
+        color: #0e7490;
+      }
+      .page {
+        font-weight: 600;
+        color: #0891b2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="steam"></div>
+    <div class="content">
+      <div class="kicker">The wrong question</div>
+      <h1>Not "when does AI<br />replace me?"</h1>
+      <div class="body">
+        <strong>The right question:</strong><br />"When does AI run my
+        chores?"<br /><br />The answer: <em>now</em>. If you wire it up.
+      </div>
+      <div class="cta">Read the playbook</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>

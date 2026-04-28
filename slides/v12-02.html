@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Courier New", "SF Mono", monospace;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #1c1f1a;
+        color: #f5f1e8;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .tape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #f97316;
+      }
+      .bottom-tape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: #f97316;
+      }
+      .head {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 18px;
+        border-bottom: 1px dashed #57534e;
+        margin-bottom: 32px;
+      }
+      .head .label {
+        font-size: 14px;
+        color: #fdba74;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .head .id {
+        font-size: 14px;
+        color: #a8a29e;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+      .list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        flex: 1;
+        justify-content: center;
+      }
+      .hook {
+        padding: 24px 28px;
+        background: rgba(249, 115, 22, 0.06);
+        border-left: 4px solid #f97316;
+        border-radius: 0 14px 14px 0;
+      }
+      .hook .name {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+      .hook .num {
+        font-size: 48px;
+        color: #f97316;
+        font-weight: 900;
+        line-height: 1;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-style: italic;
+      }
+      .hook .what {
+        font-size: 24px;
+        color: #f5f1e8;
+        font-weight: 800;
+        font-family: -apple-system, "Inter", sans-serif;
+        letter-spacing: 0.02em;
+      }
+      .hook .what em {
+        font-style: italic;
+        color: #fdba74;
+      }
+      .hook .desc {
+        font-size: 18px;
+        color: #d6d3d1;
+        line-height: 1.45;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 500;
+      }
+      .hook .code {
+        margin-top: 12px;
+        padding: 8px 14px;
+        background: #0a0a0a;
+        color: #86efac;
+        font-size: 14px;
+        border-radius: 6px;
+        display: inline-block;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #a8a29e;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 24px;
+      }
+      .brand {
+        color: #fdba74;
+      }
+      .page {
+        color: #f97316;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tape"></div>
+    <div class="bottom-tape"></div>
+    <div class="head">
+      <div class="label">// the 3 hooks</div>
+      <div class="id">[BRIEFING #019 · 02]</div>
+    </div>
+    <div class="list">
+      <div class="hook">
+        <div class="name">
+          <div class="num">01</div>
+          <div class="what">PreToolUse on <em>Bash</em></div>
+        </div>
+        <div class="desc">
+          Blocks dangerous patterns even when you're tired and click "yes" too
+          fast. Force-pushes to main. Sudo. rm -rf home. Whatever you fear.
+        </div>
+        <div class="code">~/.claude/hooks/pre-bash-guard.sh</div>
+      </div>
+      <div class="hook">
+        <div class="name">
+          <div class="num">02</div>
+          <div class="what">PostToolUse on <em>Edit/Write</em></div>
+        </div>
+        <div class="desc">
+          Auto-format on every edit. Prettier, ruff, gofmt, rustfmt — pick by
+          extension. No more PRs with mixed indentation.
+        </div>
+        <div class="code">~/.claude/hooks/post-edit-format.sh</div>
+      </div>
+      <div class="hook">
+        <div class="name">
+          <div class="num">03</div>
+          <div class="what">UserPromptSubmit <em>logger</em></div>
+        </div>
+        <div class="desc">
+          Every prompt with timestamp into ~/.claude/logs/prompts.log. Audit
+          trail = sanity later. You'll thank yourself.
+        </div>
+        <div class="code">~/.claude/hooks/log-prompt.sh</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

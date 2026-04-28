@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fafaf5;
+        color: #0a0a0a;
+        overflow: hidden;
+        font-family: "Times New Roman", Georgia, serif;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .masthead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #0a0a0a;
+        margin-bottom: 32px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .section {
+        font-size: 14px;
+        color: #525252;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .section span {
+        color: #dc2626;
+      }
+      .page-num {
+        font-size: 14px;
+        color: #525252;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+      h1 {
+        font-size: 62px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 0.95;
+        color: #0a0a0a;
+        margin-bottom: 28px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      h1 em {
+        font-style: italic;
+        color: #dc2626;
+      }
+      .list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        flex: 1;
+        justify-content: center;
+      }
+      .q {
+        display: flex;
+        gap: 24px;
+        padding: 18px 0;
+        border-bottom: 1px solid #d4d4d8;
+      }
+      .q:last-child {
+        border-bottom: none;
+      }
+      .num {
+        font-size: 60px;
+        font-weight: 900;
+        color: #dc2626;
+        flex-shrink: 0;
+        width: 84px;
+        line-height: 1;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-style: italic;
+      }
+      .body {
+        flex: 1;
+      }
+      .q-text {
+        font-size: 24px;
+        font-weight: 700;
+        color: #0a0a0a;
+        line-height: 1.3;
+        margin-bottom: 8px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .q-text em {
+        font-style: italic;
+        color: #dc2626;
+      }
+      .note {
+        font-size: 18px;
+        color: #525252;
+        line-height: 1.4;
+        font-style: italic;
+      }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #525252;
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid #d4d4d8;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .brand {
+        color: #0a0a0a;
+      }
+      .page {
+        color: #dc2626;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="masthead">
+      <div class="section">The AI Brief · <span>Issue 01</span></div>
+      <div class="page-num">02</div>
+    </div>
+    <h1>Apply this. <em>Cancel half</em><br />your AI subscriptions.</h1>
+    <div class="list">
+      <div class="q">
+        <div class="num">01</div>
+        <div class="body">
+          <div class="q-text">
+            Can my Claude Max sub
+            <em>do this with one prompt + an existing MCP?</em>
+          </div>
+          <div class="note">If yes: skip the tool entirely.</div>
+        </div>
+      </div>
+      <div class="q">
+        <div class="num">02</div>
+        <div class="body">
+          <div class="q-text">Is the workflow <em>voice-driven-able?</em></div>
+          <div class="note">
+            If yes: it belongs in your agent stack, not a separate app.
+          </div>
+        </div>
+      </div>
+      <div class="q">
+        <div class="num">03</div>
+        <div class="body">
+          <div class="q-text">Will I need it <em>3+ times per week?</em></div>
+          <div class="note">If no: don't add the friction.</div>
+        </div>
+      </div>
+      <div class="q">
+        <div class="num">04</div>
+        <div class="body">
+          <div class="q-text">Does it have <em>an API?</em></div>
+          <div class="note">Tools without APIs are dead weight in 2026.</div>
+        </div>
+      </div>
+      <div class="q">
+        <div class="num">05</div>
+        <div class="body">
+          <div class="q-text">Can I delete it <em>in 60 seconds?</em></div>
+          <div class="note">If switching costs are high, don't sign up.</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">amirkazemkhani.com</div>
+      <div class="page">PG. 02</div>
+    </div>
+  </body>
+</html>
