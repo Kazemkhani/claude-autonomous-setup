@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      h1 {
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        color: #fff;
+      }
+      .list {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 24px;
+        color: #e4e4e7;
+        font-weight: 500;
+      }
+      .check {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #4ade80, #22c55e);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 900;
+        color: #052e16;
+        box-shadow: 0 0 16px rgba(74, 222, 128, 0.45);
+      }
+      .row strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .row span {
+        color: #a1a1aa;
+        font-weight: 400;
+        font-size: 20px;
+      }
+      .cost {
+        margin-top: 32px;
+        padding: 24px 32px;
+        border-radius: 18px;
+        background: linear-gradient(
+          135deg,
+          rgba(74, 222, 128, 0.18),
+          rgba(34, 197, 94, 0.18)
+        );
+        border: 1px solid rgba(74, 222, 128, 0.4);
+        text-align: center;
+        font-size: 32px;
+        font-weight: 800;
+        color: #4ade80;
+        letter-spacing: 0.02em;
+        box-shadow: 0 0 40px rgba(74, 222, 128, 0.18);
+      }
+      .cost span {
+        color: #fff;
+        font-weight: 600;
+        font-size: 22px;
+        display: block;
+        margin-top: 6px;
+        letter-spacing: 0.04em;
+      }
+      .footer {
+        font-size: 20px;
+        color: #71717a;
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 600;
+        color: #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Stack</h1>
+    <div class="list">
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Claude Opus 4.7</strong>&nbsp;<span
+          >· 1M context · Max plan</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Telegram + iMessage channels</strong>&nbsp;<span
+          >· dual inbound</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Voice in (whisper.cpp small.en)</strong>&nbsp;<span
+          >· local, free</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Voice out (macOS say + Opus)</strong>&nbsp;<span
+          >· hands-free replies</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Mac control</strong>&nbsp;<span
+          >· mouse · keyboard · screen</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Browser automation</strong>&nbsp;<span
+          >· Playwright headed Chromium</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Postgres / Postiz / Vercel / Sentry MCPs</strong>
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Tailscale + SSH from phone</strong>&nbsp;<span
+          >· Termius backup</span
+        >
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>Hooks: pre-bash guard, auto-format, audit</strong>
+      </div>
+      <div class="row">
+        <div class="check">✓</div>
+        <strong>5 launchd daemons</strong>&nbsp;<span
+          >· never sleeps · never dies</span
+        >
+      </div>
+    </div>
+    <div class="cost">
+      $0/month extra<span>Runs on the Claude Max sub I already pay for</span>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · NOVA Labs</div>
+      <div class="page">04 / 05</div>
+    </div>
+  </body>
+</html>

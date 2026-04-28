@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1200px;
+        height: 1200px;
+        background: radial-gradient(
+          closest-side,
+          rgba(236, 72, 153, 0.3),
+          rgba(168, 85, 247, 0.18) 50%,
+          rgba(0, 0, 0, 0) 75%
+        );
+        filter: blur(40px);
+        z-index: 0;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        text-align: center;
+      }
+      .eyebrow {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        color: #fbcfe8;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 140px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #fff 0%, #fbcfe8 60%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 32px;
+      }
+      .sub {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #e4e4e7;
+        max-width: 880px;
+        margin-bottom: 64px;
+      }
+      .cta {
+        padding: 24px 48px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #a78bfa, #ec4899);
+        color: #fff;
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        box-shadow: 0 0 64px rgba(236, 72, 153, 0.5);
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .meta {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-size: 18px;
+        color: #a1a1aa;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+      .meta strong {
+        color: #fafafa;
+        display: block;
+        margin-bottom: 4px;
+        font-size: 20px;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #71717a;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 600;
+        color: #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="eyebrow">Free · Open · Reproducible</div>
+      <h1>Build<br />Your Own</h1>
+      <div class="sub">
+        Every command. Every config. Every gotcha.<br />Full setup guide in the
+        comments.
+      </div>
+      <div class="cta">→ &nbsp; Read the guide</div>
+    </div>
+    <div class="meta">
+      <strong>Built in one conversation with Claude Code itself.</strong>
+      Meta as hell. The agent helped scaffold the agent.
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · NOVA Labs</div>
+      <div class="page">05 / 05</div>
+    </div>
+  </body>
+</html>

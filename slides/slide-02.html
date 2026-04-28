@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      h1 {
+        font-size: 64px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin-bottom: 60px;
+        text-transform: uppercase;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        flex: 1;
+      }
+      .col {
+        padding: 48px;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+      }
+      .before {
+        background: rgba(239, 68, 68, 0.08);
+        border: 1px solid rgba(239, 68, 68, 0.25);
+      }
+      .after {
+        background: rgba(34, 197, 94, 0.08);
+        border: 1px solid rgba(34, 197, 94, 0.25);
+      }
+      .label {
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      .before .label {
+        color: #f87171;
+      }
+      .after .label {
+        color: #4ade80;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      li {
+        font-size: 24px;
+        line-height: 1.4;
+        color: #e4e4e7;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+      }
+      .dot {
+        flex-shrink: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-top: 12px;
+      }
+      .before .dot {
+        background: #f87171;
+      }
+      .after .dot {
+        background: #4ade80;
+      }
+      .footer {
+        font-size: 20px;
+        color: #71717a;
+        margin-top: 48px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 600;
+        color: #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Before / After</h1>
+    <div class="cols">
+      <div class="col before">
+        <div class="label">⛔ Before</div>
+        <ul>
+          <li><span class="dot"></span>Tied to my Mac to ship code</li>
+          <li><span class="dot"></span>3am prod failure = 8am discovery</li>
+          <li><span class="dot"></span>Slack notifications I miss</li>
+          <li><span class="dot"></span>Manual deploys + manual testing</li>
+          <li><span class="dot"></span>Marketing posts? After hours.</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <div class="label">⚡ After</div>
+        <ul>
+          <li><span class="dot"></span>Voice-message from a coffee shop</li>
+          <li><span class="dot"></span>Watchdog auto-restarts in 30 min</li>
+          <li><span class="dot"></span>Telegram pings on every CI fail</li>
+          <li><span class="dot"></span>9 agents ship in parallel for me</li>
+          <li><span class="dot"></span>Postiz scheduled from one prompt</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · NOVA Labs</div>
+      <div class="page">02 / 05</div>
+    </div>
+  </body>
+</html>

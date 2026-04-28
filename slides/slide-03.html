@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      h1 {
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        background: linear-gradient(90deg, #a78bfa, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 40px;
+      }
+      .org {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        position: relative;
+      }
+      .ceo {
+        padding: 28px 56px;
+        border-radius: 24px;
+        background: linear-gradient(135deg, #a78bfa, #7c3aed);
+        color: #fff;
+        font-size: 32px;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        box-shadow: 0 0 64px rgba(168, 85, 247, 0.55);
+        text-transform: uppercase;
+      }
+      .lines {
+        position: absolute;
+        top: 140px;
+        left: 50%;
+        width: 880px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(168, 85, 247, 0.5),
+          transparent
+        );
+        transform: translateX(-50%);
+      }
+      .row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        width: 100%;
+      }
+      .row.bottom {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .spec {
+        padding: 20px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #e4e4e7;
+      }
+      .spec strong {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .spec span {
+        display: block;
+        color: #a78bfa;
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 0.06em;
+      }
+      .footer {
+        font-size: 20px;
+        color: #71717a;
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 600;
+        color: #a78bfa;
+      }
+      .tag {
+        font-size: 24px;
+        color: #d4d4d8;
+        text-align: center;
+        margin-top: 24px;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The 9-Agent Hierarchy</h1>
+    <div class="org">
+      <div class="ceo">CEO · Opus 4.7</div>
+      <div class="row">
+        <div class="spec"><strong>Architect</strong><span>plans</span></div>
+        <div class="spec"><strong>Reform Eng</strong><span>RN/Expo</span></div>
+        <div class="spec"><strong>Gold Eng</strong><span>Odoo 18</span></div>
+        <div class="spec">
+          <strong>Deploy Eng</strong><span>Vercel/Sh</span>
+        </div>
+      </div>
+      <div class="row bottom">
+        <div class="spec"><strong>QA Eng</strong><span>tests</span></div>
+        <div class="spec"><strong>Security</strong><span>auditor</span></div>
+        <div class="spec">
+          <strong>Marketing</strong><span>strategist</span>
+        </div>
+        <div class="spec"><strong>Handover</strong><span>client</span></div>
+      </div>
+    </div>
+    <div class="tag">
+      CEO dispatches in parallel. Specialists ship in parallel.
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · NOVA Labs</div>
+      <div class="page">03 / 05</div>
+    </div>
+  </body>
+</html>

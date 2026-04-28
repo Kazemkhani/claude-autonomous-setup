@@ -1,0 +1,1 @@
+{"name":"setup-launch","type":"module","private":true,"dependencies":{"playwright":"^1.59.1"}}

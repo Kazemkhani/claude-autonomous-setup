@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(
+          closest-side,
+          rgba(168, 85, 247, 0.35),
+          rgba(0, 0, 0, 0)
+        );
+        filter: blur(40px);
+        z-index: 0;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+      }
+      .eyebrow {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: #a78bfa;
+        text-transform: uppercase;
+        margin-bottom: 36px;
+      }
+      h1 {
+        font-size: 108px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #fff 0%, #fff 60%, #c4b5fd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 48px;
+      }
+      .sub {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 1.3;
+        color: #fafafa;
+        max-width: 920px;
+        background: linear-gradient(90deg, #a78bfa, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 20px;
+        color: #71717a;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .swipe {
+        font-weight: 600;
+        color: #fafafa;
+      }
+      .swipe::after {
+        content: " →";
+        color: #a78bfa;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="eyebrow">2026 · Claude Opus 4.7 · 1M Context</div>
+      <h1>I Built An Autonomous AI Engineering Team</h1>
+      <div class="sub">
+        9 specialist agents. Driven from my phone. Shipping real client code
+        while I'm in traffic.
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · NOVA Labs</div>
+      <div class="swipe">Swipe</div>
+    </div>
+  </body>
+</html>

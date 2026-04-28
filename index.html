@@ -1,0 +1,1308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>I Built An Autonomous AI Engineering Team — Full Setup Guide</title>
+    <meta
+      name="description"
+      content="9 specialist Claude agents driven from Telegram. Voice in/out. Mac control. Full setup guide — every command, every gotcha. $0/mo extra."
+    />
+    <meta
+      property="og:title"
+      content="I Built An Autonomous AI Engineering Team"
+    />
+    <meta
+      property="og:description"
+      content="9 specialist Claude agents driven from Telegram. Voice in/out. Mac control. $0/mo extra."
+    />
+    <meta property="og:image" content="./slides/slide-01.png" />
+    <style>
+      :root {
+        --bg: #070708;
+        --bg2: #0f0f12;
+        --card: #15151a;
+        --line: #27272a;
+        --text: #fafafa;
+        --mute: #a1a1aa;
+        --dim: #71717a;
+        --accent: #a78bfa;
+        --accent2: #ec4899;
+        --good: #4ade80;
+        --warn: #f59e0b;
+        --bad: #f87171;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.55;
+        font-size: 17px;
+        overflow-x: hidden;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+        transition: 0.2s;
+      }
+      a:hover {
+        color: var(--accent2);
+        border-bottom-color: var(--accent2);
+      }
+      code,
+      pre {
+        font-family: "JetBrains Mono", "SF Mono", Consolas, monospace;
+        font-size: 14px;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(7, 7, 8, 0.85);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--line);
+      }
+      header .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .logo {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        font-size: 18px;
+      }
+      .logo span {
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      nav {
+        display: flex;
+        gap: 24px;
+        font-size: 14px;
+        color: var(--mute);
+      }
+      nav a {
+        color: var(--mute);
+        border: none;
+      }
+      nav a:hover {
+        color: var(--text);
+      }
+      @media (max-width: 680px) {
+        nav {
+          display: none;
+        }
+      }
+      .hero {
+        padding: 96px 0 64px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1100px;
+        height: 700px;
+        background: radial-gradient(
+          closest-side,
+          rgba(168, 85, 247, 0.18),
+          transparent 70%
+        );
+        filter: blur(40px);
+        pointer-events: none;
+      }
+      .hero .eyebrow {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        position: relative;
+      }
+      .hero h1 {
+        font-size: clamp(40px, 7vw, 84px);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        margin-bottom: 24px;
+        position: relative;
+        background: linear-gradient(135deg, #fff 0%, #fff 60%, #c4b5fd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero .lead {
+        font-size: clamp(18px, 2.4vw, 24px);
+        color: var(--mute);
+        max-width: 760px;
+        margin: 0 auto 40px;
+        line-height: 1.5;
+        position: relative;
+      }
+      .hero .lead strong {
+        color: var(--text);
+      }
+      .cta-row {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 26px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        border-bottom: none;
+        transition: 0.2s;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        color: #fff;
+        box-shadow: 0 0 32px rgba(236, 72, 153, 0.35);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 40px rgba(236, 72, 153, 0.5);
+        color: #fff;
+      }
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        border: 1px solid var(--line);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 80px 0;
+      }
+      .stat {
+        padding: 32px;
+        background: var(--bg2);
+        text-align: center;
+      }
+      .stat .num {
+        font-size: 48px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+      }
+      .stat .lbl {
+        font-size: 13px;
+        color: var(--mute);
+        margin-top: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+      }
+      section {
+        padding: 80px 0;
+        border-top: 1px solid var(--line);
+      }
+      section h2 {
+        font-size: clamp(32px, 5vw, 52px);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin-bottom: 16px;
+        line-height: 1.05;
+      }
+      section h2 .gradient {
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      section .lead {
+        color: var(--mute);
+        font-size: 19px;
+        margin-bottom: 48px;
+        max-width: 720px;
+      }
+      .cols2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      @media (max-width: 760px) {
+        .cols2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .col {
+        padding: 32px;
+        border-radius: 20px;
+        border: 1px solid var(--line);
+      }
+      .col.bad {
+        background: rgba(248, 113, 113, 0.04);
+        border-color: rgba(248, 113, 113, 0.2);
+      }
+      .col.good {
+        background: rgba(74, 222, 128, 0.04);
+        border-color: rgba(74, 222, 128, 0.2);
+      }
+      .col h3 {
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .col.bad h3 {
+        color: var(--bad);
+      }
+      .col.good h3 {
+        color: var(--good);
+      }
+      .col ul {
+        list-style: none;
+      }
+      .col li {
+        padding: 10px 0;
+        color: var(--text);
+        display: flex;
+        gap: 12px;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .col li:last-child {
+        border-bottom: none;
+      }
+      .col li::before {
+        flex-shrink: 0;
+        font-size: 18px;
+        line-height: 1;
+      }
+      .col.bad li::before {
+        content: "✕";
+        color: var(--bad);
+      }
+      .col.good li::before {
+        content: "✓";
+        color: var(--good);
+      }
+      .agent-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .agent {
+        padding: 24px;
+        border-radius: 16px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        position: relative;
+        overflow: hidden;
+        transition: 0.2s;
+      }
+      .agent:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+      }
+      .agent.ceo {
+        background: linear-gradient(
+          135deg,
+          rgba(167, 139, 250, 0.12),
+          rgba(236, 72, 153, 0.06)
+        );
+        border-color: var(--accent);
+        grid-column: 1/-1;
+      }
+      .agent .name {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .agent .role {
+        font-size: 13px;
+        color: var(--mute);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: 14px;
+        font-weight: 600;
+      }
+      .agent.ceo .role {
+        color: var(--accent);
+      }
+      .agent p {
+        font-size: 14px;
+        color: var(--text);
+        line-height: 1.5;
+      }
+      .tag {
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 6px;
+        background: rgba(167, 139, 250, 0.15);
+        color: var(--accent);
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .daemon-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-top: 24px;
+      }
+      .daemon-table th,
+      .daemon-table td {
+        padding: 16px 20px;
+        text-align: left;
+        border-bottom: 1px solid var(--line);
+        font-size: 15px;
+      }
+      .daemon-table th {
+        background: var(--bg2);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--mute);
+        font-weight: 700;
+      }
+      .daemon-table tr:last-child td {
+        border-bottom: none;
+      }
+      .daemon-table td:first-child {
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 13px;
+        color: var(--accent);
+      }
+      .steps {
+        counter-reset: step;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 32px;
+      }
+      .step {
+        counter-increment: step;
+        padding: 28px 32px;
+        background: var(--bg2);
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        position: relative;
+      }
+      .step::before {
+        content: counter(step, decimal-leading-zero);
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        font-size: 48px;
+        font-weight: 900;
+        color: rgba(167, 139, 250, 0.15);
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+      .step h3 {
+        font-size: 22px;
+        font-weight: 800;
+        margin-bottom: 8px;
+        letter-spacing: -0.01em;
+      }
+      .step p {
+        color: var(--mute);
+        margin-bottom: 14px;
+        font-size: 15px;
+      }
+      .step pre {
+        background: #000;
+        padding: 16px 20px;
+        border-radius: 10px;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        margin: 8px 0;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+      .step code {
+        color: var(--accent2);
+      }
+      .cheat {
+        background: var(--bg2);
+        padding: 32px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        margin-top: 24px;
+      }
+      .cheat dt {
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 14px;
+        color: var(--accent);
+        font-weight: 600;
+        margin-top: 14px;
+      }
+      .cheat dt:first-child {
+        margin-top: 0;
+      }
+      .cheat dd {
+        color: var(--mute);
+        font-size: 15px;
+        margin-top: 4px;
+      }
+      .linkedin-card {
+        padding: 32px;
+        background: #0a4d72;
+        border-radius: 16px;
+        color: #fff;
+        margin-top: 32px;
+        font-size: 16px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        font-family: -apple-system, sans-serif;
+      }
+      .copy-btn {
+        margin-top: 16px;
+        background: #0e76a8;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .copy-btn:hover {
+        background: #0a5d8a;
+      }
+      footer {
+        padding: 80px 0 64px;
+        text-align: center;
+        border-top: 1px solid var(--line);
+        color: var(--dim);
+        font-size: 14px;
+        margin-top: 80px;
+      }
+      footer .name {
+        color: var(--text);
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      footer a {
+        color: var(--accent);
+        border: none;
+      }
+      .kbd {
+        display: inline-block;
+        padding: 2px 8px;
+        background: #1f1f24;
+        border: 1px solid var(--line);
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 12px;
+        color: var(--text);
+      }
+      .warn {
+        padding: 16px 20px;
+        background: rgba(245, 158, 11, 0.08);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        border-radius: 10px;
+        margin: 16px 0;
+        font-size: 14px;
+        color: #fcd34d;
+      }
+      .warn strong {
+        color: #fbbf24;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        transition: 0.2s;
+      }
+      .gallery img:hover {
+        transform: scale(1.02);
+        border-color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <div class="logo">amir/<span>autonomous-ai-team</span></div>
+        <nav>
+          <a href="#what">What's Running</a>
+          <a href="#team">The 9 Agents</a>
+          <a href="#build">Build It</a>
+          <a href="#cheat">Cheatsheet</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">
+          2026 · Claude Opus 4.7 · 1M Context · Max Plan
+        </div>
+        <h1>I Built An Autonomous<br />AI Engineering Team</h1>
+        <p class="lead">
+          Yesterday I had to be at my Mac to ship code. Today I voice-messaged my
+          Telegram bot from a coffee shop and
+          <strong>9 specialist AI agents</strong> ship to staging while I drink
+          it. Every command, every config, every gotcha — below.
+        </p>
+        <div class="cta-row">
+          <a href="#build" class="btn btn-primary">→ Build your own</a>
+          <a href="#linkedin" class="btn btn-ghost">Copy the LinkedIn post</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat">
+          <div class="num">9</div>
+          <div class="lbl">Specialist Agents</div>
+        </div>
+        <div class="stat">
+          <div class="num">5</div>
+          <div class="lbl">Always-On Daemons</div>
+        </div>
+        <div class="stat">
+          <div class="num">6</div>
+          <div class="lbl">MCP Servers</div>
+        </div>
+        <div class="stat">
+          <div class="num">$0</div>
+          <div class="lbl">Extra / Month</div>
+        </div>
+      </div>
+
+      <section id="what">
+        <h2>
+          The <span class="gradient">before</span> &
+          <span class="gradient">after</span>
+        </h2>
+        <p class="lead">
+          A snapshot of what changed when I went from "Claude Code in a
+          terminal" to "autonomous engineering team running 24/7 on a Mac mini
+          at home."
+        </p>
+        <div class="cols2">
+          <div class="col bad">
+            <h3>⛔ Before</h3>
+            <ul>
+              <li>Tied to my Mac to ship code</li>
+              <li>3am production failure = 8am discovery</li>
+              <li>Slack notifications I miss</li>
+              <li>Manual deploys, manual testing, manual everything</li>
+              <li>Marketing posts? "After hours" never came</li>
+              <li>Hand-holding required for client handovers</li>
+            </ul>
+          </div>
+          <div class="col good">
+            <h3>⚡ After</h3>
+            <ul>
+              <li>Voice-message from a coffee shop, agent ships</li>
+              <li>Watchdog auto-restarts in 30 min, alerts via Telegram</li>
+              <li>Telegram pings on every CI failure across all repos</li>
+              <li>9 agents run audits + tests + deploys in parallel</li>
+              <li>Postiz scheduled from one prompt to LinkedIn + Insta</li>
+              <li>Client handover docs auto-generated on request</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="team">
+        <h2>The <span class="gradient">9-agent</span> hierarchy</h2>
+        <p class="lead">
+          Telegram requests hit the <strong>CEO</strong>, who plans + dispatches
+          specialists in parallel. Each specialist has a focused tool set, a
+          single-page system prompt, and a clear "definition of done." Nine
+          markdown files in <code>~/.claude/agents/</code>.
+        </p>
+        <div class="agent-grid">
+          <div class="agent ceo">
+            <div class="name">
+              CEO <span class="tag">Opus 4.7 · default entry</span>
+            </div>
+            <div class="role">Strategic Orchestrator</div>
+            <p>
+              Receives every non-trivial Telegram request. Plans, dispatches
+              specialists in parallel, synthesizes results, replies to user.
+              Never writes code itself — delegates everything.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">Architect <span class="tag">Opus</span></div>
+            <div class="role">Designs Before Code</div>
+            <p>
+              Used for >100 LOC features, refactors, schema changes. Outputs a
+              plan with trade-offs, NOT code. Specialists execute the plan.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">
+              Reform Engineer <span class="tag">Sonnet</span>
+            </div>
+            <div class="role">React Native + Expo Specialist</div>
+            <p>
+              Reform202 (luxury wellness booking app). RN/Expo + Supabase +
+              Stripe + Vercel + NativeWind. Premium client engagement.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">
+              Gold Engineer <span class="tag">Sonnet</span>
+            </div>
+            <div class="role">Odoo 18 Python Specialist</div>
+            <p>
+              gold-platform (B2B financial-services platform for [client], partner
+              co-builder). Odoo.sh deploy, three-stage branch flow.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">
+              Deploy Engineer <span class="tag">Sonnet</span>
+            </div>
+            <div class="role">Ships With Hard Gates</div>
+            <p>
+              Vercel/Odoo.sh/Docker/EAS. Never ships to production without QA
+              green AND security green AND explicit user approval in the current
+              message.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">QA Engineer <span class="tag">Sonnet</span></div>
+            <div class="role">Tests, Reproduces, Gates</div>
+            <p>
+              Runs project test commands, writes regression tests for any bug,
+              gates merges with a verdict report. Doesn't fix code — diagnoses.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">
+              Security Auditor <span class="tag">Sonnet</span>
+            </div>
+            <div class="role">Pre-Production Defender</div>
+            <p>
+              Secret scans, OWASP review, dependency CVEs, financial-data
+              integrity. ALWAYS called before production deploys. Returns
+              severity verdict.
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">
+              Marketing Strategist <span class="tag">Sonnet</span>
+            </div>
+            <div class="role">Postiz + Social Strategy</div>
+            <p>
+              Schedules cross-platform via Postiz MCP. Writes copy in per-brand
+              voice (luxury for Reform, technical for NOVA, B2B for gold).
+            </p>
+          </div>
+          <div class="agent">
+            <div class="name">
+              Client Handover <span class="tag">Sonnet</span>
+            </div>
+            <div class="role">Packages For Client Delivery</div>
+            <p>
+              Generates HANDOVER.md, ADMIN_GUIDE.md, SUPPORT_RUNBOOK.md, demo
+              videos via Playwright + ffmpeg, seed-data scripts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="daemons">
+        <h2>The <span class="gradient">5 daemons</span> running 24/7</h2>
+        <p class="lead">
+          launchd-managed. Survive reboots. Auto-restart on crash. The watchdog
+          watches the bot, the Mac never sleeps, and a private GitHub repo holds
+          the entire config.
+        </p>
+        <table class="daemon-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>What it does</th>
+              <th>Cadence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>com.amir.claude-bot</td>
+              <td>Telegram + iMessage channel listener; main agent session</td>
+              <td>Always</td>
+            </tr>
+            <tr>
+              <td>com.amir.caffeinate</td>
+              <td>
+                <code>caffeinate -d -i -m -s</code> — kills sleep at every layer
+              </td>
+              <td>Always</td>
+            </tr>
+            <tr>
+              <td>com.amir.watchdog</td>
+              <td>
+                Heartbeat check, alerts via Telegram + auto-restart on failure
+              </td>
+              <td>Every 30 min</td>
+            </tr>
+            <tr>
+              <td>com.amir.daily-briefing</td>
+              <td>
+                <code>claude -p "..."</code> headless → Telegram digest (PRs,
+                errors, calendar, recommended priority)
+              </td>
+              <td>Mon-Fri 9am UAE</td>
+            </tr>
+            <tr>
+              <td>com.amir.config-backup</td>
+              <td>
+                Sync curated <code>~/.claude</code> to private GitHub repo (with
+                secret-leak guard)
+              </td>
+              <td>Hourly</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="capabilities">
+        <h2>The <span class="gradient">capability matrix</span></h2>
+        <p class="lead">
+          Every checkbox is a real, verified capability — not a marketing claim.
+        </p>
+        <table class="daemon-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Mechanism</th>
+              <th>Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Inbound text from phone</td>
+              <td>Anthropic Telegram channel plugin (official, March 2026)</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Inbound text fallback</td>
+              <td>Anthropic iMessage channel plugin</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Voice messages → text</td>
+              <td>whisper.cpp local, ggml-small.en (480MB)</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Text → voice replies</td>
+              <td>
+                macOS <code>say</code> + ffmpeg libopus → Telegram sendVoice
+              </td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Mouse / keyboard / screen</td>
+              <td>
+                <code>computer-use-mcp</code> + <code>mac-mcp-server</code> (44
+                OSAKit tools)
+              </td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Browser automation</td>
+              <td>Playwright MCP, headed Chromium</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Database access</td>
+              <td>Postgres MCP (bring your own DSN)</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Social posting</td>
+              <td>Postiz MCP (X / LinkedIn / Insta / TikTok / 25+)</td>
+              <td>Postiz sub</td>
+            </tr>
+            <tr>
+              <td>Deploy: Vercel / Sentry / Stripe</td>
+              <td>Official MCPs (OAuth on first use)</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Email + Calendar</td>
+              <td>claude.ai-hosted Gmail + Google Calendar MCPs</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Remote shell from phone</td>
+              <td>Tailscale + macOS Remote Login + Termius</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>CI failure alerts</td>
+              <td>GitHub Actions workflow → Telegram Bot API</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td>Config disaster recovery</td>
+              <td>
+                Hourly rsync to private GitHub repo with secret-leak guard
+              </td>
+              <td>Free</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="build">
+        <h2>How to <span class="gradient">build your own</span></h2>
+        <p class="lead">
+          Apple Silicon Mac, macOS 14+, ~30 minutes from zero. Replace the
+          project names + Telegram IDs with yours.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <h3>Prerequisites</h3>
+            <p>
+              Active <strong>Claude Max subscription</strong> ($100 or $200/mo)
+              — this is the engine. You also need <code>brew</code>,
+              <code>node</code> ≥ 20, and Claude Code v2.1.80+.
+            </p>
+            <pre><code>brew install tmux ffmpeg whisper-cpp tailscale gh
+npm install -g bun @playwright/mcp playwright
+npx playwright install chromium</code></pre>
+          </div>
+
+          <div class="step">
+            <h3>Create a Telegram bot + add the channel plugin</h3>
+            <p>
+              On Telegram → message <strong>@BotFather</strong> →
+              <code>/newbot</code> → save the token. Then in Claude Code:
+            </p>
+            <pre><code>claude plugin marketplace add anthropics/claude-plugins-official
+claude plugin install telegram@claude-plugins-official
+claude plugin install imessage@claude-plugins-official  # backup channel
+
+mkdir -p ~/.claude/channels/telegram
+echo "TELEGRAM_BOT_TOKEN=&lt;your-token&gt;" &gt; ~/.claude/channels/telegram/.env
+chmod 600 ~/.claude/channels/telegram/.env</code></pre>
+          </div>
+
+          <div class="step">
+            <h3>Wire the MCP servers</h3>
+            <p>One command per server. Adjust args for your projects.</p>
+            <pre><code>claude mcp add -s user mac-control -- npx -y mac-mcp-server
+claude mcp add -s user desktop -- npx -y computer-use-mcp
+claude mcp add -s user playwright -- /opt/homebrew/bin/playwright-mcp
+claude mcp add -s user postgres -- npx -y @modelcontextprotocol/server-postgres "postgresql://localhost:5432/postgres"
+claude mcp add -s user postiz \
+  --transport http \
+  --header "Authorization: Bearer $POSTIZ_API_KEY" \
+  "https://mcp.postiz.com/mcp"
+claude mcp add --transport http vercel "https://mcp.vercel.com"
+claude mcp add --transport http sentry "https://mcp.sentry.dev/mcp"
+claude mcp add --transport http stripe "https://mcp.stripe.com"</code></pre>
+          </div>
+
+          <div class="step">
+            <h3>Patch the Telegram plugin for voice transcription</h3>
+            <p>
+              Anthropic's plugin v0.0.6 receives voice messages but doesn't
+              transcribe. <strong>Patch <code>server.ts</code></strong> at
+              <code
+                >~/.claude/plugins/cache/claude-plugins-official/telegram/0.0.6/server.ts</code
+              >
+              — add a <code>transcribeAudio()</code> helper that pipes through
+              ffmpeg + whisper-cli, and call it in the
+              <code>message:voice</code> + <code>message:audio</code> handlers
+              before <code>handleInbound</code>. Set the model path to
+              <code>~/.claude/whisper-models/ggml-small.en.bin</code>.
+            </p>
+            <p>Then download the model:</p>
+            <pre><code>mkdir -p ~/.claude/whisper-models
+curl -L -o ~/.claude/whisper-models/ggml-small.en.bin \
+  https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin</code></pre>
+            <div class="warn">
+              <strong>Heads up:</strong> the patch is wiped if you ever run
+              <code>claude plugin update telegram</code>. Save a copy and
+              re-apply on upgrade.
+            </div>
+          </div>
+
+          <div class="step">
+            <h3>Drop in the 9 agent files</h3>
+            <p>
+              Each agent is a markdown file with YAML frontmatter —
+              <code>name</code>, <code>description</code> (when to invoke),
+              <code>tools</code> (allowed tool list),
+              <code>model</code> (sonnet/opus/haiku).
+            </p>
+            <pre><code>mkdir -p ~/.claude/agents
+
+# One file per agent — see this guide's Appendix
+# for the full system prompts, or copy from:
+# github.com/Kazemkhani/claude-autonomous-setup</code></pre>
+          </div>
+
+          <div class="step">
+            <h3>Wire the 3 hooks (defense in depth)</h3>
+            <p>
+              Even with <code>--dangerously-skip-permissions</code>, hooks still
+              gate dangerous actions. Three scripts in
+              <code>~/.claude/hooks/</code>:
+            </p>
+            <ul style="list-style: none; padding-left: 0; margin-top: 12px">
+              <li style="padding: 8px 0; border-bottom: 1px solid var(--line)">
+                <code style="color: var(--accent)">pre-bash-guard.sh</code> —
+                blocks force-push to main/master/production, blocks
+                <code>--no-verify</code>, gates direct push to protected
+                branches
+              </li>
+              <li style="padding: 8px 0; border-bottom: 1px solid var(--line)">
+                <code style="color: var(--accent)">post-edit-format.sh</code> —
+                auto-formats on every Edit/Write (prettier, ruff, gofmt,
+                rustfmt, shfmt, swift-format) in background
+              </li>
+              <li style="padding: 8px 0">
+                <code style="color: var(--accent)">log-prompt.sh</code> — every
+                UserPromptSubmit appended to
+                <code>~/.claude/logs/prompts.log</code> for audit
+              </li>
+            </ul>
+            <p style="margin-top: 14px">
+              Add the hook entries to <code>~/.claude/settings.json</code> under
+              a top-level <code>"hooks"</code> object.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>The launchd plist for the daemon</h3>
+            <p>
+              This is the one that keeps everything alive. Save to
+              <code>~/Library/LaunchAgents/com.amir.claude-bot.plist</code> —
+              <code>RunAtLoad</code> + <code>KeepAlive</code> = boot-on-login,
+              restart-on-crash. Spawns a detached <code>tmux</code> session
+              running
+              <code
+                >claude --channels plugin:telegram@claude-plugins-official
+                plugin:imessage@claude-plugins-official
+                --dangerously-skip-permissions --add-dir ...</code
+              >.
+            </p>
+            <pre><code>launchctl load ~/Library/LaunchAgents/com.amir.claude-bot.plist</code></pre>
+          </div>
+
+          <div class="step">
+            <h3>Caffeinate + watchdog + briefing + backup</h3>
+            <p>
+              Four more launch agents — same pattern, each runs a tiny shell
+              script. Caffeinate runs <code>caffeinate -d -i -m -s</code> as a
+              permanent process. Watchdog checks daemon health every 30 min.
+              Briefing runs <code>claude -p</code> headless Mon-Fri 9am. Config
+              backup rsyncs the curated config to a private GitHub repo hourly
+              with a secret-leak guard.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>Tailscale + Termius for remote shell</h3>
+            <p>
+              Sign into Tailscale (free, personal use) on Mac + iPhone.
+              <strong>Toggle Remote Login ON</strong> in System Settings →
+              Sharing. Install Termius on iPhone. New host: Tailscale IP + your
+              Mac username + your macOS login password. SSH in from anywhere —
+              your Tailscale identity is the network gate.
+            </p>
+          </div>
+
+          <div class="step">
+            <h3>GitHub Actions → Telegram on every CI failure</h3>
+            <p>
+              Add <code>.github/workflows/telegram-notify.yml</code> to each
+              repo. Triggers on
+              <code>workflow_run.conclusion == failure</code> and on push to
+              <code>main/master/production</code>. Set per-repo secrets
+              <code>TELEGRAM_BOT_TOKEN</code> + <code>TELEGRAM_CHAT_ID</code>:
+            </p>
+            <pre><code>gh secret set TELEGRAM_BOT_TOKEN -R you/repo --body "$TOKEN"
+gh secret set TELEGRAM_CHAT_ID -R you/repo --body "$YOUR_TG_USER_ID"</code></pre>
+          </div>
+
+          <div class="step">
+            <h3>Pair your Telegram identity</h3>
+            <p>
+              Start the daemon. From your phone, DM the bot any message. The bot
+              replies with a 6-character pairing code. In the running session,
+              run:
+            </p>
+            <pre><code>/telegram:access pair &lt;code&gt;
+/telegram:access policy allowlist  # lock to allowlist after pairing</code></pre>
+            <p>
+              Now your Telegram ID is the only one that can drive the agent. Add
+              partners by repeating the pairing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cheat">
+        <h2>The <span class="gradient">cheatsheet</span></h2>
+        <p class="lead">Useful one-liners for living with this stack.</p>
+        <dl class="cheat">
+          <dt>tmux attach -t claude-bot</dt>
+          <dd>
+            Attach to the running daemon's terminal.
+            <span class="kbd">Ctrl-b</span> then <span class="kbd">d</span> to
+            detach.
+          </dd>
+
+          <dt>launchctl list | grep amir.</dt>
+          <dd>Health check: are all 5 daemons running?</dd>
+
+          <dt>tail -f ~/.claude/logs/claude-bot.{out,err}.log</dt>
+          <dd>Live tail of the daemon's stdout + stderr.</dd>
+
+          <dt>tail -f ~/.claude/logs/prompts.log</dt>
+          <dd>
+            Audit trail — every prompt that hit the daemon, with timestamps.
+          </dd>
+
+          <dt>claude mcp list</dt>
+          <dd>MCP server health check.</dd>
+
+          <dt>ssh amir@&lt;tailscale-ip&gt;</dt>
+          <dd>
+            Remote shell from your phone (after enabling Remote Login + signing
+            into Tailscale on phone).
+          </dd>
+
+          <dt>
+            launchctl unload ~/Library/LaunchAgents/com.amir.claude-bot.plist
+            &amp;&amp; launchctl load same
+          </dt>
+          <dd>Force-restart the daemon after config changes.</dd>
+
+          <dt>
+            ~/.claude/scripts/send-voice-reply.sh &lt;chat_id&gt; "&lt;text&gt;"
+          </dt>
+          <dd>
+            Make the agent send a voice note. Default voice Samantha (override
+            with optional 3rd arg).
+          </dd>
+        </dl>
+      </section>
+
+      <section id="phrases">
+        <h2>Things to <span class="gradient">say</span> to it</h2>
+        <p class="lead">
+          Optimized prompts that exercise the full team. Voice or text — same
+          syntax.
+        </p>
+        <dl class="cheat">
+          <dt>
+            "audit reform for production readiness, run security + qa in
+            parallel and tell me the verdict"
+          </dt>
+          <dd>
+            Triggers CEO → security-auditor + qa-engineer in parallel →
+            consolidated verdict.
+          </dd>
+
+          <dt>
+            "plan how we'd add a refunds flow to reform stripe, then build it"
+          </dt>
+          <dd>
+            Architect first, then reform-engineer implements per the plan.
+          </dd>
+
+          <dt>
+            "take a screenshot of novalabs.ae mobile and tell me how the hero
+            looks"
+          </dt>
+          <dd>
+            Playwright MCP, headed Chromium, mobile viewport. Returns screenshot
+            + critique.
+          </dd>
+
+          <dt>
+            "open the gold-platform staging postgres and find hedges with
+            negative pnl this week"
+          </dt>
+          <dd>Postgres MCP query, results summarized in chat.</dd>
+
+          <dt>
+            "draft 3 LinkedIn variants announcing reform 2.0, in [client]'s brand
+            voice"
+          </dt>
+          <dd>
+            Marketing strategist; brand voice persisted in
+            <code>~/.claude/agents/marketing-strategist.md</code>.
+          </dd>
+
+          <dt>
+            "compose handover docs for reform and put a 5-min demo video in
+            handover/"
+          </dt>
+          <dd>
+            Client-handover agent. Generates HANDOVER.md + ADMIN_GUIDE.md +
+            Playwright-recorded demo.mp4.
+          </dd>
+
+          <dt>"give me a voice reply with status of all 6 repos"</dt>
+          <dd>
+            Returns a Telegram voice note (Samantha) + a text fallback for
+            notifications.
+          </dd>
+        </dl>
+      </section>
+
+      <section id="linkedin">
+        <h2>The <span class="gradient">LinkedIn post</span></h2>
+        <p class="lead">
+          Copy + paste the version below to your own profile. It's been
+          A/B-tested for a hook → curiosity → CTA flow.
+        </p>
+        <div class="linkedin-card" id="lipost">
+          Yesterday I had to be at my Mac to ship code. Today I voice-messaged
+          my Telegram bot from a coffee shop and 9 specialist AI agents shipped
+          to staging while I drank it. Here's what's running 24/7 on a Mac mini
+          at home: 🧠 Claude Opus 4.7 (1M ctx) — listening on Telegram +
+          iMessage 👥 9 specialist agents — CEO orchestrator + architect +
+          per-project engineers + deploy + QA + security + marketing +
+          client-handover 🎤 Voice in (whisper.cpp local) + voice out (macOS
+          speech) — fully hands-free 🖥️ Full Mac control — mouse, keyboard,
+          screen, browser via Playwright + AppleScript MCPs 🔒 Hooks blocking
+          force-push to main, --no-verify, sudo ⚙️ 5 launchd daemons keeping it
+          alive: bot, never-sleep, watchdog, daily 9am briefing, hourly config
+          backup to private GitHub 📡 Tailscale + Termius — SSH into the Mac
+          from any iPhone in case I need the wheel 💸 Cost: $0/month extra. Runs
+          on the Claude Max sub I already pay for. Built in one conversation
+          with Claude Code itself. Meta as hell. The agent helped scaffold the
+          agent. It just did pre-prod audits on TWO real client projects in
+          parallel while I was in traffic. Pushed feature branches, sent PR
+          links to my Telegram. Production untouched (denylist enforced). Full
+          setup guide — every command, every gotcha — in the comments. Build
+          your own. #AI #ClaudeCode #DevOps #AutomationEngineering
+          #BuildInPublic
+        </div>
+        <button
+          class="copy-btn"
+          onclick="
+            navigator.clipboard.writeText(
+              document.getElementById('lipost').innerText,
+            );
+            this.innerText = '✓ Copied';
+          "
+        >
+          Copy to clipboard
+        </button>
+      </section>
+
+      <section id="gallery">
+        <h2>The <span class="gradient">visuals</span></h2>
+        <p class="lead">Carousel slides that ship with the LinkedIn post.</p>
+        <div class="gallery">
+          <a href="./slides/slide-01.png" target="_blank"
+            ><img
+              src="./slides/slide-01.png"
+              alt="Slide 1: Hero"
+              loading="lazy"
+          /></a>
+          <a href="./slides/slide-02.png" target="_blank"
+            ><img
+              src="./slides/slide-02.png"
+              alt="Slide 2: Before/After"
+              loading="lazy"
+          /></a>
+          <a href="./slides/slide-03.png" target="_blank"
+            ><img
+              src="./slides/slide-03.png"
+              alt="Slide 3: 9-Agent Hierarchy"
+              loading="lazy"
+          /></a>
+          <a href="./slides/slide-04.png" target="_blank"
+            ><img
+              src="./slides/slide-04.png"
+              alt="Slide 4: The Stack"
+              loading="lazy"
+          /></a>
+          <a href="./slides/slide-05.png" target="_blank"
+            ><img
+              src="./slides/slide-05.png"
+              alt="Slide 5: Build Your Own"
+              loading="lazy"
+          /></a>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <div class="name">Amir Hossein Kazemkhani</div>
+        <div>
+          Building <a href="https://novalabs.ae" target="_blank">NOVA Labs</a> ·
+          Voice AI for sales · Abu Dhabi · UAE
+        </div>
+        <div style="margin-top: 24px; color: var(--dim); font-size: 12px">
+          Built with Claude Code · Setup guide rendered from
+          <code>~/work/setup-launch/</code> · No secrets in this page
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
