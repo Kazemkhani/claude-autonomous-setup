@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #0a0000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1300px;
+        height: 1300px;
+        background: radial-gradient(
+          closest-side,
+          rgba(239, 68, 68, 0.32),
+          rgba(220, 38, 38, 0.16) 50%,
+          transparent 75%
+        );
+        filter: blur(60px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .eyebrow {
+        font-size: 22px;
+        color: #fecaca;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 148px;
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        margin-bottom: 32px;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      h1 .red {
+        background: linear-gradient(135deg, #fca5a5, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .body {
+        font-size: 30px;
+        color: #fecaca;
+        font-weight: 600;
+        line-height: 1.4;
+        max-width: 880px;
+        margin: 0 auto 48px;
+      }
+      .body strong {
+        color: #fff;
+        font-weight: 800;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: center;
+        align-items: center;
+        gap: 18px;
+        padding: 28px 56px;
+        background: #fff;
+        color: #0a0000;
+        border-radius: 14px;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        box-shadow: 0 0 80px rgba(239, 68, 68, 0.5);
+        text-transform: uppercase;
+      }
+      .cta::after {
+        content: "→";
+        font-size: 32px;
+        color: #dc2626;
+      }
+      .email {
+        margin-top: 24px;
+        font-size: 22px;
+        color: #fca5a5;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+      .email span {
+        color: #fff;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #52525b;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 700;
+        color: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="eyebrow">Six months from now</div>
+      <h1>It's <span class="red">table stakes.</span></h1>
+      <div class="body">
+        <strong>Move now</strong> or follow the playbook later. I made the guide
+        free because I want a thousand more people building these.
+      </div>
+      <div class="cta">DM me when you ship</div>
+      <div class="email">
+        amirkazemkhani.com · <span>amir@amirkazemkhani.com</span>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>

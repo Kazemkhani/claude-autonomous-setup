@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", "Playfair Display", Georgia, serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fdf6e3;
+        color: #1a1814;
+        overflow: hidden;
+      }
+      body {
+        padding: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(120, 90, 30, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 18px 18px;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-size: 20px;
+        color: #a16207;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 36px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      .eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 48px;
+        height: 2px;
+        background: #a16207;
+        vertical-align: middle;
+        margin-right: 18px;
+        margin-bottom: 6px;
+      }
+      h1 {
+        font-size: 132px;
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+        color: #1a1814;
+      }
+      h1 em {
+        font-style: italic;
+        color: #a16207;
+      }
+      .sub {
+        font-size: 32px;
+        color: #78350f;
+        font-style: italic;
+        line-height: 1.4;
+        max-width: 880px;
+        font-weight: 400;
+      }
+      .line {
+        margin-top: 48px;
+        height: 1px;
+        background: #a16207;
+        opacity: 0.4;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 16px;
+        color: #78350f;
+        font-family: -apple-system, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+      .brand {
+        color: #a16207;
+      }
+      .swipe {
+        color: #1a1814;
+        font-weight: 700;
+      }
+      .swipe::after {
+        content: " →";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <div class="content">
+      <div class="eyebrow">CHAPTER 05 · Lessons Learned</div>
+      <h1>Five things<br /><em>I wish I knew</em><br />earlier.</h1>
+      <div class="sub">
+        Building this autonomous AI engineering team taught me more than any
+        framework documentation ever has.
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Swipe</div>
+    </div>
+  </body>
+</html>

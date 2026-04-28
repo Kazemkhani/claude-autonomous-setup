@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "JetBrains Mono", monospace;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(34, 197, 94, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 197, 94, 0.06) 1px, transparent 1px);
+        background-size: 36px 36px;
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 54px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 32px;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      h1 .red {
+        color: #dc2626;
+      }
+      h1 .grn {
+        color: #22c55e;
+      }
+      .list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        flex: 1;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 22px;
+        border-radius: 10px;
+        background: rgba(34, 197, 94, 0.04);
+        border: 1px solid rgba(34, 197, 94, 0.18);
+        font-size: 21px;
+      }
+      .row.strike .what {
+        text-decoration: line-through;
+        color: #7f1d1d;
+      }
+      .row.strike .price {
+        color: #dc2626;
+      }
+      .what {
+        color: #fafafa;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+      }
+      .price {
+        font-weight: 800;
+        font-size: 24px;
+        color: #22c55e;
+      }
+      .total {
+        margin-top: 24px;
+        padding: 24px 28px;
+        border: 2px solid #22c55e;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(34, 197, 94, 0.08);
+        box-shadow: 0 0 40px rgba(34, 197, 94, 0.2);
+      }
+      .total-label {
+        font-size: 24px;
+        color: #86efac;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+      }
+      .total-num {
+        font-size: 48px;
+        font-weight: 900;
+        color: #22c55e;
+        text-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #3f3f46;
+        margin-top: 24px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .brand {
+        color: #71717a;
+      }
+      .page {
+        color: #22c55e;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <h1>
+      What the <span class="red">team</span> would cost<br />vs. what
+      <span class="grn">I pay</span>.
+    </h1>
+    <div class="list">
+      <div class="row strike">
+        <div class="what">DevOps engineer always on-call</div>
+        <div class="price">$8,000</div>
+      </div>
+      <div class="row strike">
+        <div class="what">Outsourced QA cycle</div>
+        <div class="price">$3,000</div>
+      </div>
+      <div class="row strike">
+        <div class="what">Pre-deploy security review</div>
+        <div class="price">$5,000</div>
+      </div>
+      <div class="row strike">
+        <div class="what">Marketing scheduler</div>
+        <div class="price">$2,000</div>
+      </div>
+      <div class="row strike">
+        <div class="what">Handover documentation</div>
+        <div class="price">$2,000</div>
+      </div>
+      <div class="row strike">
+        <div class="what">24/7 observability + alerting</div>
+        <div class="price">$1,000</div>
+      </div>
+      <div class="total">
+        <div class="total-label">My actual stack</div>
+        <div class="total-num">$200</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

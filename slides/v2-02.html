@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #06121f;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 54px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 32px;
+      }
+      h1 span {
+        background: linear-gradient(135deg, #06b6d4, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .org {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 36px;
+      }
+      .ceo {
+        padding: 32px 64px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, #06b6d4, #10b981);
+        color: #06121f;
+        font-size: 34px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        box-shadow: 0 0 80px rgba(6, 182, 212, 0.55);
+        text-transform: uppercase;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        width: 100%;
+      }
+      .spec {
+        padding: 18px 12px;
+        border-radius: 12px;
+        background: rgba(16, 185, 129, 0.06);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #bae6fd;
+      }
+      .spec strong {
+        display: block;
+        color: #fff;
+        font-size: 17px;
+        margin-bottom: 6px;
+        letter-spacing: 0.02em;
+      }
+      .spec span {
+        display: block;
+        color: #10b981;
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: none;
+      }
+      .tag {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-size: 22px;
+        color: #bae6fd;
+        margin-top: 24px;
+        font-weight: 500;
+      }
+      .tag em {
+        font-style: normal;
+        color: #10b981;
+        font-weight: 700;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #475569;
+        margin-top: 24px;
+      }
+      .brand {
+        font-weight: 700;
+        color: #94a3b8;
+      }
+      .page {
+        font-weight: 600;
+        color: #06b6d4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <h1>The <span>org chart.</span></h1>
+    <div class="org">
+      <div class="ceo">CEO · Opus 4.7</div>
+      <div class="row">
+        <div class="spec">
+          <strong>Architect</strong><span>plans first</span>
+        </div>
+        <div class="spec">
+          <strong>Frontend Eng</strong><span>RN/Expo</span>
+        </div>
+        <div class="spec"><strong>Backend Eng</strong><span>Python</span></div>
+        <div class="spec"><strong>Deploy Eng</strong><span>ships</span></div>
+      </div>
+      <div class="row">
+        <div class="spec"><strong>QA Eng</strong><span>tests</span></div>
+        <div class="spec"><strong>Security</strong><span>auditor</span></div>
+        <div class="spec">
+          <strong>Marketing</strong><span>strategist</span>
+        </div>
+        <div class="spec"><strong>Handover</strong><span>client</span></div>
+      </div>
+    </div>
+    <div class="tag">
+      CEO dispatches in <em>parallel</em>. I get one tight reply.
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

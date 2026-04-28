@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "JetBrains Mono", "SF Mono", "Menlo", monospace;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(34, 197, 94, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(34, 197, 94, 0.06) 1px, transparent 1px);
+        background-size: 36px 36px;
+      }
+      .scan {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 60%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(34, 197, 94, 0.6),
+          transparent
+        );
+        box-shadow: 0 0 24px rgba(34, 197, 94, 0.6);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .term {
+        font-size: 18px;
+        color: #22c55e;
+        margin-bottom: 32px;
+        letter-spacing: 0.04em;
+        font-weight: 600;
+      }
+      .term::before {
+        content: "$ ";
+        color: #16a34a;
+      }
+      h1 {
+        font-size: 280px;
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -0.06em;
+        margin-bottom: 24px;
+        color: #22c55e;
+        text-shadow: 0 0 60px rgba(34, 197, 94, 0.4);
+      }
+      .cents {
+        font-size: 140px;
+        color: #15803d;
+        vertical-align: top;
+      }
+      .label {
+        font-size: 36px;
+        font-weight: 700;
+        color: #86efac;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .fine {
+        font-size: 22px;
+        color: #86efac;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+      }
+      .fine span {
+        color: #fff;
+        font-weight: 700;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 16px;
+        color: #3f3f46;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .brand {
+        color: #71717a;
+      }
+      .swipe {
+        color: #22c55e;
+        font-weight: 700;
+      }
+      .swipe::after {
+        content: " →";
+        color: #86efac;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="scan"></div>
+    <div class="content">
+      <div class="term">cost-of-9-ai-engineers --24x7</div>
+      <h1>$0<span class="cents">.00</span></h1>
+      <div class="label">/ month / extra</div>
+      <div class="fine">
+        Runs on the <span>$200/mo Claude Max</span> sub I already pay for. Same
+        engine. Same chatbot. Now: a whole team.
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Swipe</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", Georgia, serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fdf6e3;
+        color: #1a1814;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(120, 90, 30, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 18px 18px;
+      }
+      .head {
+        position: relative;
+        z-index: 1;
+        font-size: 32px;
+        font-weight: 700;
+        color: #a16207;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        font-family: -apple-system, sans-serif;
+      }
+      .head::before {
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 2px;
+        background: #a16207;
+        vertical-align: middle;
+        margin-right: 14px;
+        margin-bottom: 6px;
+      }
+      .list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        flex: 0 1 auto;
+        margin-bottom: 32px;
+      }
+      .lesson {
+        display: flex;
+        gap: 32px;
+        padding-bottom: 36px;
+        border-bottom: 1px solid rgba(161, 98, 7, 0.25);
+      }
+      .lesson:last-child {
+        border-bottom: none;
+      }
+      .num {
+        font-size: 84px;
+        line-height: 1;
+        color: #a16207;
+        font-weight: 700;
+        font-style: italic;
+        flex-shrink: 0;
+        width: 120px;
+      }
+      .body {
+        flex: 1;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #1a1814;
+        margin-bottom: 8px;
+      }
+      .title em {
+        font-style: italic;
+        color: #a16207;
+      }
+      .note {
+        font-size: 19px;
+        line-height: 1.4;
+        color: #78350f;
+        font-style: italic;
+      }
+      .cta {
+        position: relative;
+        z-index: 1;
+        margin-top: auto;
+        padding: 32px;
+        background: #1a1814;
+        color: #fdf6e3;
+        border-radius: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cta-text {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        font-family: -apple-system, sans-serif;
+      }
+      .cta-text em {
+        font-style: italic;
+        color: #fbbf24;
+      }
+      .cta-arrow {
+        font-size: 36px;
+        color: #fbbf24;
+        font-family: -apple-system, sans-serif;
+        font-weight: 300;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #78350f;
+        font-family: -apple-system, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-top: 20px;
+      }
+      .brand {
+        color: #a16207;
+      }
+      .page {
+        color: #1a1814;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <div class="head">And the last two.</div>
+    <div class="list">
+      <div class="lesson">
+        <div class="num">04</div>
+        <div class="body">
+          <div class="title">macOS launchd <em>wins</em>.</div>
+          <div class="note">
+            Cron is fragile. systemd doesn't exist on Mac. launchd's KeepAlive
+            is the simplest "never dies" pattern.
+          </div>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="num">05</div>
+        <div class="body">
+          <div class="title">Sanitize <em>before sharing</em>.</div>
+          <div class="note">
+            Public client work + AI = walk carefully. Your clients didn't sign
+            up to be in your marketing. (I learned this the hard way.)
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cta">
+      <div class="cta-text">Read all <em>five</em> in the full guide</div>
+      <div class="cta-arrow">→</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>

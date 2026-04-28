@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #0a0000;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        height: 1100px;
+        background: radial-gradient(
+          closest-side,
+          rgba(239, 68, 68, 0.18),
+          transparent 70%
+        );
+        filter: blur(50px);
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 54px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+      }
+      h1 .red {
+        background: linear-gradient(135deg, #ef4444, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .cols {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        flex: 1;
+      }
+      .col {
+        padding: 36px 32px;
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+      }
+      .now {
+        background: rgba(239, 68, 68, 0.06);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+      }
+      .next {
+        background: rgba(74, 222, 128, 0.06);
+        border: 1px solid rgba(74, 222, 128, 0.3);
+      }
+      .label {
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+      .now .label {
+        color: #ef4444;
+      }
+      .next .label {
+        color: #4ade80;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      li {
+        font-size: 21px;
+        line-height: 1.35;
+        color: #fafafa;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-weight: 500;
+      }
+      .now li::before {
+        content: "✕";
+        color: #ef4444;
+        flex-shrink: 0;
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 900;
+      }
+      .next li::before {
+        content: "✓";
+        color: #4ade80;
+        flex-shrink: 0;
+        font-size: 20px;
+        line-height: 1.4;
+        font-weight: 900;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #52525b;
+        margin-top: 24px;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 700;
+        color: #ef4444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <h1>What 99% do <span class="red">vs</span> what 1% do.</h1>
+    <div class="cols">
+      <div class="col now">
+        <div class="label">⛔ The 99%</div>
+        <ul>
+          <li>Cursor / Copilot autocomplete</li>
+          <li>ChatGPT in a browser tab</li>
+          <li>Manual social scheduling</li>
+          <li>Slack pages on prod fail</li>
+          <li>Screenshare client demos</li>
+        </ul>
+      </div>
+      <div class="col next">
+        <div class="label">⚡ The 1%</div>
+        <ul>
+          <li>Voice-driven coding anywhere</li>
+          <li>9 agents shipping in parallel</li>
+          <li>Auto-Telegram on every CI fail</li>
+          <li>AI-generated handover docs</li>
+          <li>Agent-driven cross-platform social</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

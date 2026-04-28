@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #06121f;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 600px;
+        transform: translateY(-50%);
+        background: radial-gradient(
+          closest-side,
+          rgba(6, 182, 212, 0.25),
+          transparent 70%
+        );
+        filter: blur(40px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+      }
+      .eyebrow {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        color: #10b981;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 128px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        color: #fff;
+        margin-bottom: 48px;
+      }
+      .gradient {
+        background: linear-gradient(135deg, #06b6d4, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .sub {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #bae6fd;
+        max-width: 920px;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 18px;
+        color: #475569;
+      }
+      .brand {
+        font-weight: 700;
+        color: #94a3b8;
+      }
+      .swipe {
+        font-weight: 600;
+        color: #06b6d4;
+      }
+      .swipe::after {
+        content: " →";
+        color: #10b981;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="eyebrow">CHAPTER 02 · The Hierarchy</div>
+      <h1>9 employees.<br /><span class="gradient">All AI.</span></h1>
+      <div class="sub">
+        Zero billable hours. Zero meetings. Zero PTO requests. They dispatched
+        in parallel while I drank coffee.
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Swipe</div>
+    </div>
+  </body>
+</html>

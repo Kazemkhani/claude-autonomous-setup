@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #0a0510;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1200px;
+        height: 1200px;
+        background: radial-gradient(
+          closest-side,
+          rgba(249, 115, 22, 0.28),
+          rgba(220, 38, 38, 0.12) 50%,
+          transparent 75%
+        );
+        filter: blur(50px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .kicker {
+        font-size: 24px;
+        color: #a1a1aa;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 120px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        margin-bottom: 32px;
+        font-style: italic;
+      }
+      .bg {
+        background: linear-gradient(135deg, #fbbf24, #f59e0b, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-style: normal;
+      }
+      .body {
+        font-size: 32px;
+        color: #fed7aa;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 880px;
+        margin: 0 auto 48px;
+      }
+      .body strong {
+        color: #fff;
+        font-style: italic;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: center;
+        padding: 24px 56px;
+        background: linear-gradient(135deg, #f59e0b, #dc2626);
+        border-radius: 14px;
+        color: #fff;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        box-shadow: 0 0 60px rgba(220, 38, 38, 0.5);
+        text-transform: uppercase;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #52525b;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 600;
+        color: #f59e0b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="kicker">The trope</div>
+      <h1>AI as <span class="bg">team</span><br />you direct.</h1>
+      <div class="body">
+        <strong>The "AI as assistant" trope is dying.</strong><br />Voice is the
+        killer interface. Not chat.
+      </div>
+      <div class="cta">Read the guide →</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", Georgia, serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #fdf6e3;
+        color: #1a1814;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .paper {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(120, 90, 30, 0.08) 1px,
+          transparent 1px
+        );
+        background-size: 18px 18px;
+      }
+      .head {
+        position: relative;
+        z-index: 1;
+        font-size: 32px;
+        font-weight: 700;
+        color: #a16207;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+        font-family: -apple-system, sans-serif;
+      }
+      .head::before {
+        content: "";
+        display: inline-block;
+        width: 32px;
+        height: 2px;
+        background: #a16207;
+        vertical-align: middle;
+        margin-right: 14px;
+        margin-bottom: 6px;
+      }
+      .list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        flex: 1;
+        justify-content: center;
+      }
+      .lesson {
+        display: flex;
+        gap: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid rgba(161, 98, 7, 0.25);
+      }
+      .lesson:last-child {
+        border-bottom: none;
+      }
+      .num {
+        font-size: 84px;
+        line-height: 1;
+        color: #a16207;
+        font-weight: 700;
+        font-style: italic;
+        flex-shrink: 0;
+        width: 120px;
+      }
+      .body {
+        flex: 1;
+      }
+      .title {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #1a1814;
+        margin-bottom: 8px;
+      }
+      .title em {
+        font-style: italic;
+        color: #a16207;
+      }
+      .note {
+        font-size: 19px;
+        line-height: 1.4;
+        color: #78350f;
+        font-style: italic;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #78350f;
+        font-family: -apple-system, sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-top: 24px;
+      }
+      .brand {
+        color: #a16207;
+      }
+      .page {
+        color: #1a1814;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="paper"></div>
+    <div class="head">The first three.</div>
+    <div class="list">
+      <div class="lesson">
+        <div class="num">01</div>
+        <div class="body">
+          <div class="title">The CEO is not <em>just a router</em>.</div>
+          <div class="note">
+            It's the only agent that talks to humans. Skip this layer and your
+            specialists' raw outputs leak into your phone notifications.
+          </div>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="num">02</div>
+        <div class="body">
+          <div class="title">Hooks <em>save you</em>.</div>
+          <div class="note">
+            Even with bypass-permissions on, my pre-bash-guard caught my own AI
+            trying to push to main twice. Defense in depth = real money saved.
+          </div>
+        </div>
+      </div>
+      <div class="lesson">
+        <div class="num">03</div>
+        <div class="body">
+          <div class="title">Voice-in is <em>10x</em>.</div>
+          <div class="note">
+            Once you can hold the mic and dispatch a 6-step task in 8 seconds,
+            you'll never type a Telegram prompt again.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

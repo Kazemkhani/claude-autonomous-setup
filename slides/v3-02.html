@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #0a0510;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        height: 600px;
+        background: radial-gradient(
+          ellipse,
+          rgba(249, 115, 22, 0.18),
+          transparent 70%
+        );
+        filter: blur(50px);
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 62px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        color: #fff;
+        margin-bottom: 24px;
+      }
+      h1 em {
+        font-style: italic;
+        background: linear-gradient(135deg, #f59e0b, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .flow {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+      }
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 24px 28px;
+        border-radius: 14px;
+        background: rgba(245, 158, 11, 0.05);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+      }
+      .step .num {
+        font-size: 48px;
+        font-weight: 900;
+        color: #f59e0b;
+        line-height: 1;
+        flex-shrink: 0;
+        width: 60px;
+        font-style: italic;
+      }
+      .step .body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+      }
+      .step .what {
+        font-size: 28px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .step .who {
+        font-size: 16px;
+        color: #fed7aa;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .cost {
+        position: relative;
+        z-index: 1;
+        margin-top: 20px;
+        padding: 24px;
+        border-radius: 14px;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.18),
+          rgba(220, 38, 38, 0.18)
+        );
+        border: 1px solid rgba(245, 158, 11, 0.4);
+        text-align: center;
+        font-size: 26px;
+        font-weight: 800;
+        color: #fbbf24;
+        font-style: italic;
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #52525b;
+        margin-top: 20px;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a1a1aa;
+      }
+      .page {
+        font-weight: 600;
+        color: #f59e0b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <h1>The <em>voice</em> stack.</h1>
+    <div class="flow">
+      <div class="step">
+        <div class="num">01</div>
+        <div class="body">
+          <div class="what">Hold mic in Telegram</div>
+          <div class="who">iPhone · AirPods</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div class="body">
+          <div class="what">whisper.cpp transcribes locally</div>
+          <div class="who">Mac mini · ggml-small.en (480MB)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div class="body">
+          <div class="what">Claude executes the task</div>
+          <div class="who">Opus 4.7 · 9-agent team</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <div class="body">
+          <div class="what">Reply to AirPods if voice asked</div>
+          <div class="who">macOS say · ffmpeg · Telegram sendVoice</div>
+        </div>
+      </div>
+    </div>
+    <div class="cost">Total cost of the voice stack: $0</div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

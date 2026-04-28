@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        background: #06121f;
+        color: #fff;
+        overflow: hidden;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        height: 1100px;
+        background: radial-gradient(
+          closest-side,
+          rgba(16, 185, 129, 0.22),
+          transparent 70%
+        );
+        filter: blur(50px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .kicker {
+        font-size: 24px;
+        color: #94a3b8;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 96px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        margin-bottom: 36px;
+      }
+      h1 span {
+        display: block;
+        background: linear-gradient(135deg, #06b6d4, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .body {
+        font-size: 30px;
+        color: #bae6fd;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 880px;
+        margin: 0 auto;
+      }
+      .body strong {
+        color: #fff;
+      }
+      .cta {
+        margin-top: 48px;
+        display: inline-flex;
+        align-self: center;
+        padding: 24px 48px;
+        background: rgba(16, 185, 129, 0.1);
+        border: 1px solid rgba(16, 185, 129, 0.5);
+        border-radius: 14px;
+        color: #10b981;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+      .cta::after {
+        content: " →";
+      }
+      .footer {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        color: #475569;
+      }
+      .brand {
+        font-weight: 700;
+        color: #94a3b8;
+      }
+      .page {
+        font-weight: 600;
+        color: #06b6d4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-grid"></div>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="kicker">The takeaway</div>
+      <h1>This isn't AGI.<span>This is delegation.</span></h1>
+      <div class="body">
+        <strong>Most engineers</strong> haven't realized — "agents" doesn't mean
+        one big chatbot. It means a team where each role has its own focused
+        system prompt, tool set, and definition of done.
+      </div>
+      <div class="cta">Read the full guide</div>
+    </div>
+    <div class="footer">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">03 / 03</div>
+    </div>
+  </body>
+</html>
