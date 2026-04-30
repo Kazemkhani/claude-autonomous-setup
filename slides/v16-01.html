@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1e1b4b;
+        color: #e0e7ff;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: -200px;
+        left: -100px;
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(
+          closest-side,
+          rgba(139, 92, 246, 0.45),
+          transparent 70%
+        );
+        filter: blur(60px);
+      }
+      .glow2 {
+        position: absolute;
+        bottom: -200px;
+        right: -100px;
+        width: 900px;
+        height: 900px;
+        background: radial-gradient(
+          closest-side,
+          rgba(34, 211, 238, 0.35),
+          transparent 70%
+        );
+        filter: blur(60px);
+      }
+      .pin {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fbbf24;
+        box-shadow:
+          0 0 0 4px rgba(251, 191, 36, 0.3),
+          0 8px 16px rgba(0, 0, 0, 0.5);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 48px;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 18px;
+        background: rgba(251, 191, 36, 0.15);
+        border: 1px solid rgba(251, 191, 36, 0.4);
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fbbf24;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-size: 124px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #fff;
+        margin-bottom: 32px;
+      }
+      h1 em {
+        font-style: italic;
+        background: linear-gradient(135deg, #fbbf24, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .sub {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1.4;
+        color: #c7d2fe;
+        max-width: 880px;
+      }
+      .sub strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-size: 18px;
+        color: #6366f1;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a5b4fc;
+      }
+      .swipe {
+        font-weight: 800;
+        color: #fbbf24;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .swipe::after {
+        content: " →";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="glow2"></div>
+    <div class="pin"></div>
+    <div class="content">
+      <div class="eyebrow">📌 saved · curated · daily-use</div>
+      <h1>5 underrated<br /><em>MCP servers</em><br />nobody talks about.</h1>
+      <div class="sub">
+        The 1% advantage isn't a different model. It's
+        <strong>the connections you wire into it</strong>. Five I use daily,
+        inside.
+      </div>
+    </div>
+    <div class="foot">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="swipe">Open</div>
+    </div>
+  </body>
+</html>

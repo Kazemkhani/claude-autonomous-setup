@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fef08a;
+        color: #1a1a1a;
+        font-family: "Times New Roman", serif;
+      }
+      body {
+        padding: 96px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .halftone {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(220, 38, 38, 0.18) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 14px 14px;
+        pointer-events: none;
+      }
+      .stamp {
+        position: absolute;
+        top: 80px;
+        right: 80px;
+        width: 240px;
+        height: 80px;
+        border: 5px solid #dc2626;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #dc2626;
+        font-weight: 900;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+        transform: rotate(-8deg);
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+        background: rgba(255, 255, 255, 0.4);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-family: -apple-system, "Inter", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #dc2626;
+        margin-bottom: 24px;
+      }
+      h1 {
+        font-size: 120px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        color: #1a1a1a;
+        margin-bottom: 40px;
+        font-style: italic;
+      }
+      h1 span {
+        display: block;
+        color: #dc2626;
+      }
+      .lede {
+        font-size: 30px;
+        line-height: 1.45;
+        color: #1a1a1a;
+        max-width: 880px;
+        margin-bottom: 48px;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 600;
+      }
+      .lede strong {
+        font-style: italic;
+        font-family: "Times New Roman", serif;
+        font-weight: 700;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 22px 44px;
+        background: #1a1a1a;
+        color: #fef08a;
+        border-radius: 0;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+        box-shadow: 8px 8px 0 #dc2626;
+      }
+      .cta::after {
+        content: "→";
+        color: #dc2626;
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #525252;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="halftone"></div>
+    <div class="stamp">opinion</div>
+    <div class="content">
+      <div class="eyebrow">// the move</div>
+      <h1>Stop watching.<span>Start wiring.</span></h1>
+      <div class="lede">
+        <strong>The tools are public.</strong> Anthropic shipped the channel
+        plugin. Microsoft shipped Playwright MCP. macOS ships native voice. The
+        only missing piece was someone wiring them up.
+      </div>
+      <div class="cta">amirkazemkhani.com</div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani</div>
+      <div>03 / 03</div>
+    </div>
+  </body>
+</html>

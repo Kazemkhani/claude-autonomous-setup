@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:
+          "Helvetica Neue",
+          -apple-system,
+          "Inter",
+          sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0c4a6e;
+        color: #bae6fd;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .blueprint {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(186, 230, 253, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(186, 230, 253, 0.06) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .blueprint-fine {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(186, 230, 253, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(186, 230, 253, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 16px 16px;
+      }
+      .title-block {
+        position: absolute;
+        top: 36px;
+        right: 36px;
+        border: 2px solid #bae6fd;
+        padding: 16px 24px;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 13px;
+        color: #bae6fd;
+        background: rgba(12, 74, 110, 0.85);
+        letter-spacing: 0.06em;
+        line-height: 1.6;
+      }
+      .title-block strong {
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 6px;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 48px;
+      }
+      .eyebrow {
+        font-size: 18px;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        color: #bae6fd;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 32px;
+      }
+      .eyebrow::before {
+        content: "BLUEPRINT_REV.01 ▸ ";
+      }
+      h1 {
+        font-size: 148px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        color: #fff;
+        margin-bottom: 36px;
+        text-transform: uppercase;
+      }
+      h1 em {
+        font-style: italic;
+        color: #fbbf24;
+      }
+      .body {
+        font-size: 30px;
+        color: #bae6fd;
+        font-weight: 500;
+        line-height: 1.4;
+        max-width: 880px;
+      }
+      .body strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 14px;
+        color: #7dd3fc;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blueprint"></div>
+    <div class="blueprint-fine"></div>
+    <div class="title-block">
+      <strong>SHEET 020/A</strong>SCALE 1:1<br />DRAWN BY AHK<br />2026-04 ·
+      BUILD-LOOP-V01
+    </div>
+    <div class="content">
+      <div class="eyebrow">if budget were ∞</div>
+      <h1>What I'd<br /><em>build</em> with<br />unlimited credits.</h1>
+      <div class="body">
+        5 schematics. <strong>4 are buildable today.</strong> The 5th — soon.
+      </div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amirkazemkhani.com</div>
+      <div>SWIPE FOR THE BLUEPRINTS →</div>
+    </div>
+  </body>
+</html>

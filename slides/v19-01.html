@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #020617;
+        color: #e2e8f0;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .grid-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .window {
+        position: relative;
+        z-index: 1;
+        background: rgba(15, 23, 42, 0.7);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        border-radius: 16px;
+        padding: 32px 36px;
+        backdrop-filter: blur(8px);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+        margin-bottom: 32px;
+      }
+      .head .title {
+        font-size: 18px;
+        color: #7dd3fc;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+      }
+      .head .timestamp {
+        font-size: 14px;
+        color: #475569;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .timestamp .live {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #22c55e;
+        border-radius: 50%;
+        margin-right: 8px;
+        box-shadow: 0 0 12px rgba(34, 197, 94, 0.6);
+        vertical-align: middle;
+      }
+      .eyebrow {
+        font-size: 16px;
+        color: #7dd3fc;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 18px;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .eyebrow::before {
+        content: "// ";
+      }
+      h1 {
+        font-size: 108px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #fff;
+        margin-bottom: 32px;
+      }
+      h1 em {
+        font-style: italic;
+        color: #38bdf8;
+      }
+      .sub {
+        font-size: 28px;
+        color: #cbd5e1;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: auto;
+      }
+      .sub strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .chart {
+        display: flex;
+        align-items: flex-end;
+        gap: 14px;
+        height: 120px;
+        margin-top: 32px;
+      }
+      .bar {
+        flex: 1;
+        background: linear-gradient(180deg, #38bdf8, #0c4a6e);
+        border-radius: 6px 6px 0 0;
+        position: relative;
+      }
+      .bar span {
+        position: absolute;
+        bottom: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: #475569;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+      }
+      .foot {
+        padding: 24px 0 0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #475569;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+      }
+      .foot a {
+        color: #7dd3fc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="window">
+      <div class="head">
+        <div class="title">~/forecasts/ai-90day-predictions.dash</div>
+        <div class="timestamp">
+          <span class="live"></span>LIVE · UPDATED $(date)
+        </div>
+      </div>
+      <div class="eyebrow">forecast horizon: 90 days</div>
+      <h1>5 things<br />I'd <em>bet on</em>.</h1>
+      <div class="sub">
+        Calibrated probabilities, not vibes.
+        <strong>Bookmark this. Check back in 90 days.</strong>
+      </div>
+      <div class="chart">
+        <div class="bar" style="height: 70%"><span>P1: 70%</span></div>
+        <div class="bar" style="height: 60%"><span>P2: 60%</span></div>
+        <div class="bar" style="height: 95%"><span>P3: 95%</span></div>
+        <div class="bar" style="height: 40%"><span>P4: 40%</span></div>
+        <div class="bar" style="height: 55%"><span>P5: 55%</span></div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amirkazemkhani.com</div>
+      <div>SWIPE →</div>
+    </div>
+  </body>
+</html>

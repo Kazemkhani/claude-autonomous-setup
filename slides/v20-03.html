@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0c4a6e;
+        color: #bae6fd;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .blueprint {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(186, 230, 253, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(186, 230, 253, 0.06) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .blueprint-fine {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(186, 230, 253, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(186, 230, 253, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 16px 16px;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1300px;
+        height: 1300px;
+        background: radial-gradient(
+          closest-side,
+          rgba(251, 191, 36, 0.18),
+          rgba(186, 230, 253, 0.1) 50%,
+          transparent 75%
+        );
+        filter: blur(50px);
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 18px;
+        color: #fbbf24;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .eyebrow::before {
+        content: "// ";
+      }
+      h1 {
+        font-size: 124px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #fff;
+        margin-bottom: 32px;
+      }
+      h1 em {
+        font-style: italic;
+        color: #fbbf24;
+      }
+      .body {
+        font-size: 30px;
+        color: #bae6fd;
+        font-weight: 500;
+        line-height: 1.45;
+        max-width: 880px;
+        margin-bottom: 48px;
+      }
+      .body strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 14px;
+        padding: 22px 44px;
+        background: #fbbf24;
+        color: #0c4a6e;
+        border-radius: 8px;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        box-shadow: 0 0 60px rgba(251, 191, 36, 0.5);
+      }
+      .cta::after {
+        content: "→";
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 13px;
+        color: #7dd3fc;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blueprint"></div>
+    <div class="blueprint-fine"></div>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="eyebrow">building #01 this weekend</div>
+      <h1>I'm not<br /><em>waiting</em> for unlimited.</h1>
+      <div class="body">
+        <strong>4 of 5 are buildable today.</strong> Open the guide. Pick one.
+        Wire it up. The first one ships fastest.
+      </div>
+      <div class="cta">amirkazemkhani.com</div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amir@amirkazemkhani.com</div>
+      <div>03 / 03</div>
+    </div>
+  </body>
+</html>

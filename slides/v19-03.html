@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #020617;
+        color: #e2e8f0;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .grid-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(56, 189, 248, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(56, 189, 248, 0.06) 1px, transparent 1px);
+        background-size: 40px 40px;
+        pointer-events: none;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        height: 1100px;
+        background: radial-gradient(
+          closest-side,
+          rgba(56, 189, 248, 0.18),
+          transparent 70%
+        );
+        filter: blur(50px);
+        pointer-events: none;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .eyebrow {
+        font-size: 18px;
+        color: #7dd3fc;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 24px;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+      }
+      .eyebrow::before {
+        content: "// ";
+      }
+      h1 {
+        font-size: 124px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        margin-bottom: 36px;
+        color: #fff;
+      }
+      h1 em {
+        font-style: italic;
+        color: #38bdf8;
+      }
+      .body {
+        font-size: 30px;
+        color: #cbd5e1;
+        font-weight: 500;
+        line-height: 1.45;
+        max-width: 880px;
+        margin: 0 auto 56px;
+      }
+      .body strong {
+        color: #fff;
+        font-weight: 700;
+      }
+      .cta {
+        display: inline-flex;
+        align-self: center;
+        align-items: center;
+        gap: 14px;
+        padding: 24px 48px;
+        background: #38bdf8;
+        color: #020617;
+        border-radius: 12px;
+        font-size: 26px;
+        font-weight: 900;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        box-shadow: 0 0 60px rgba(56, 189, 248, 0.5);
+      }
+      .cta::after {
+        content: "→";
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #475569;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="eyebrow">[bookmark this]</div>
+      <h1>Check back<br />in <em>90 days.</em></h1>
+      <div class="body">
+        I'll grade my own predictions in public.
+        <strong>Save this post — track me to the call.</strong>
+      </div>
+      <div class="cta">amirkazemkhani.com</div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amir@amirkazemkhani.com</div>
+      <div>03 / 03</div>
+    </div>
+  </body>
+</html>

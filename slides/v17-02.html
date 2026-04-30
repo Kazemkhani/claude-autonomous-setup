@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1c1917;
+        color: #fff;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      h1 {
+        font-size: 54px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        font-family: "Impact", "Arial Black", sans-serif;
+      }
+      h1 em {
+        font-style: italic;
+        color: #fef08a;
+        font-family: "Impact", "Arial Black", sans-serif;
+      }
+      .rounds {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        flex: 1;
+        justify-content: center;
+      }
+      .round {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 24px;
+        padding: 24px 28px;
+        border-radius: 14px;
+        border: 2px solid #44403c;
+        background: rgba(28, 25, 23, 0.8);
+        align-items: center;
+      }
+      .round.win-claude {
+        border-left: 6px solid #dc2626;
+      }
+      .round.win-gpt {
+        border-left: 6px solid #0ea5e9;
+      }
+      .round.tie {
+        border-left: 6px solid #fef08a;
+      }
+      .tag {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+      .tag-num {
+        font-size: 48px;
+        font-weight: 900;
+        color: #fef08a;
+        font-family: "Impact", "Arial Black", sans-serif;
+        line-height: 1;
+      }
+      .tag-label {
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #a8a29e;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+      }
+      .title strong {
+        color: #dc2626;
+        text-transform: uppercase;
+      }
+      .title strong.gpt {
+        color: #0ea5e9;
+      }
+      .title strong.tie {
+        color: #fef08a;
+      }
+      .note {
+        font-size: 16px;
+        line-height: 1.4;
+        color: #d6d3d1;
+        font-style: italic;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #525252;
+        margin-top: 24px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The <em>rounds.</em></h1>
+    <div class="rounds">
+      <div class="round win-gpt">
+        <div class="tag">
+          <div class="tag-num">R1</div>
+          <div class="tag-label">Style</div>
+        </div>
+        <div class="body">
+          <div class="title">Winner: <strong class="gpt">GPT-5.5</strong></div>
+          <div class="note">
+            Wanted shorter functions, more abstraction. Claude went for fewer
+            files, more inline logic.
+          </div>
+        </div>
+      </div>
+      <div class="round tie">
+        <div class="tag">
+          <div class="tag-num">R2</div>
+          <div class="tag-label">Security</div>
+        </div>
+        <div class="body">
+          <div class="title">Result: <strong class="tie">Draw</strong></div>
+          <div class="note">
+            Both flagged the same security issues. Both spotted the same missing
+            edge cases.
+          </div>
+        </div>
+      </div>
+      <div class="round win-gpt">
+        <div class="tag">
+          <div class="tag-num">R3</div>
+          <div class="tag-label">Bug catch</div>
+        </div>
+        <div class="body">
+          <div class="title">Winner: <strong class="gpt">GPT-5.5</strong></div>
+          <div class="note">
+            Caught a race condition Claude wrote. But took 3 attempts to
+            articulate WHY.
+          </div>
+        </div>
+      </div>
+      <div class="round win-claude">
+        <div class="tag">
+          <div class="tag-num">R4</div>
+          <div class="tag-label">Speed</div>
+        </div>
+        <div class="body">
+          <div class="title">Winner: <strong>Claude</strong></div>
+          <div class="note">
+            Stayed on task. GPT drifted between abstractions, kept rewriting.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amirkazemkhani.com</div>
+      <div>02 / 03</div>
+    </div>
+  </body>
+</html>

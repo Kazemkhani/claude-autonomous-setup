@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0c4a6e;
+        color: #bae6fd;
+      }
+      body {
+        padding: 48px 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .blueprint {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(186, 230, 253, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(186, 230, 253, 0.06) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .blueprint-fine {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(186, 230, 253, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(186, 230, 253, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 16px 16px;
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 48px;
+        font-weight: 900;
+        color: #fff;
+        letter-spacing: -0.03em;
+        margin-bottom: 32px;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+      }
+      h1::before {
+        content: "▸ ";
+        color: #fbbf24;
+      }
+      .list {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        flex: 1;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 90px 1fr auto;
+        gap: 18px;
+        padding: 18px 22px;
+        border: 1px dashed rgba(186, 230, 253, 0.4);
+        border-radius: 6px;
+        background: rgba(7, 49, 72, 0.6);
+        align-items: center;
+      }
+      .id {
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fbbf24;
+        line-height: 1;
+      }
+      .body {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .label {
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .note {
+        font-size: 14px;
+        color: #7dd3fc;
+        line-height: 1.4;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+      }
+      .status {
+        padding: 6px 14px;
+        border-radius: 99px;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .status.ready {
+        background: rgba(34, 197, 94, 0.18);
+        color: #86efac;
+        border: 1px solid rgba(34, 197, 94, 0.4);
+      }
+      .status.soon {
+        background: rgba(251, 191, 36, 0.18);
+        color: #fbbf24;
+        border: 1px solid rgba(251, 191, 36, 0.4);
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-family: "JetBrains Mono", "SF Mono", monospace;
+        font-size: 13px;
+        color: #7dd3fc;
+        margin-top: 14px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blueprint"></div>
+    <div class="blueprint-fine"></div>
+    <h1>Specifications.</h1>
+    <div class="list">
+      <div class="row">
+        <div class="id">[01]</div>
+        <div class="body">
+          <div class="label">Overnight code-review agent</div>
+          <div class="note">
+            // reads every PR while I sleep, posts comments, triages inbox
+          </div>
+        </div>
+        <div class="status ready">Ready</div>
+      </div>
+      <div class="row">
+        <div class="id">[02]</div>
+        <div class="body">
+          <div class="label">24/7 API-change watcher</div>
+          <div class="note">
+            // Stripe, Twilio, etc. — silently keeps my code current
+          </div>
+        </div>
+        <div class="status ready">Ready</div>
+      </div>
+      <div class="row">
+        <div class="id">[03]</div>
+        <div class="body">
+          <div class="label">Weekly retro agent</div>
+          <div class="note">
+            // reads git + cal + Telegram → 200-word reflection on my week
+          </div>
+        </div>
+        <div class="status ready">Ready</div>
+      </div>
+      <div class="row">
+        <div class="id">[04]</div>
+        <div class="body">
+          <div class="label">Incident-response team</div>
+          <div class="note">
+            // Sentry → war-room thread + first hypothesis + fix branch
+          </div>
+        </div>
+        <div class="status ready">Ready</div>
+      </div>
+      <div class="row">
+        <div class="id">[05]</div>
+        <div class="body">
+          <div class="label">A literal AI co-founder</div>
+          <div class="note">
+            // daily standup, weekly OKRs, disagrees when I'm wrong
+          </div>
+        </div>
+        <div class="status soon">Soon</div>
+      </div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amirkazemkhani.com</div>
+      <div>02 / 03</div>
+    </div>
+  </body>
+</html>

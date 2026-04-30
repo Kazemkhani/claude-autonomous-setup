@@ -34,6 +34,13 @@ for (const setName of [
   "v11",
   "v12",
   "v13",
+  "v14",
+  "v15",
+  "v16",
+  "v17",
+  "v18",
+  "v19",
+  "v20",
 ]) {
   for (let i = 1; i <= 3; i++) {
     const n = String(i).padStart(2, "0");

@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1e1b4b;
+        color: #e0e7ff;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1100px;
+        height: 1100px;
+        background: radial-gradient(
+          closest-side,
+          rgba(139, 92, 246, 0.18),
+          transparent 70%
+        );
+        filter: blur(50px);
+      }
+      h1 {
+        position: relative;
+        z-index: 1;
+        font-size: 54px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 32px;
+      }
+      h1 em {
+        font-style: italic;
+        background: linear-gradient(135deg, #fbbf24, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .cards {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        flex: 1;
+        justify-content: center;
+      }
+      .card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 18px 24px;
+        background: rgba(99, 102, 241, 0.08);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 14px;
+        backdrop-filter: blur(10px);
+      }
+      .icon {
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 900;
+      }
+      .card.sentry .icon {
+        background: linear-gradient(135deg, #7c3aed, #a855f7);
+      }
+      .card.stripe .icon {
+        background: linear-gradient(135deg, #635bff, #a05bff);
+      }
+      .card.postgres .icon {
+        background: linear-gradient(135deg, #0891b2, #22d3ee);
+      }
+      .card.vercel .icon {
+        background: linear-gradient(135deg, #000, #3b3b3b);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .card.mac .icon {
+        background: linear-gradient(135deg, #fbbf24, #f97316);
+        color: #1a1a1a;
+      }
+      .body-inner {
+        flex: 1;
+      }
+      .body-inner strong {
+        display: block;
+        font-size: 22px;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .body-inner span {
+        display: block;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #a5b4fc;
+      }
+      .tag {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        font-size: 22px;
+        color: #c7d2fe;
+        margin-top: 24px;
+        font-weight: 600;
+        font-style: italic;
+      }
+      .tag em {
+        font-style: normal;
+        color: #fbbf24;
+        font-weight: 800;
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        color: #6366f1;
+        margin-top: 14px;
+      }
+      .brand {
+        font-weight: 700;
+        color: #a5b4fc;
+      }
+      .page {
+        font-weight: 700;
+        color: #fbbf24;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="glow"></div>
+    <h1>Five servers, all <em>free</em>.</h1>
+    <div class="cards">
+      <div class="card sentry">
+        <div class="icon">⚠</div>
+        <div class="body-inner">
+          <strong>Sentry MCP</strong
+          ><span
+            >Claude reads prod errors and proposes fixes — no more "paste the
+            stack trace."</span
+          >
+        </div>
+      </div>
+      <div class="card stripe">
+        <div class="icon">$</div>
+        <div class="body-inner">
+          <strong>Stripe MCP</strong
+          ><span
+            >"Show me churn this month" → live answer. Payment ops in
+            chat.</span
+          >
+        </div>
+      </div>
+      <div class="card postgres">
+        <div class="icon">DB</div>
+        <div class="body-inner">
+          <strong>Postgres MCP</strong
+          ><span
+            >BYO DSN. Query Supabase, Odoo, anything with a connection
+            string.</span
+          >
+        </div>
+      </div>
+      <div class="card vercel">
+        <div class="icon">▲</div>
+        <div class="body-inner">
+          <strong>Vercel MCP</strong
+          ><span
+            >"Deploy preview" → done. Build status without leaving
+            Telegram.</span
+          >
+        </div>
+      </div>
+      <div class="card mac">
+        <div class="icon">⌘</div>
+        <div class="body-inner">
+          <strong>mac-mcp-server</strong
+          ><span>44 macOS automation tools. Wild for live client demos.</span>
+        </div>
+      </div>
+    </div>
+    <div class="tag">All <em>open source</em>. All a one-liner to install.</div>
+    <div class="foot">
+      <div class="brand">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="page">02 / 03</div>
+    </div>
+  </body>
+</html>

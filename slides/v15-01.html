@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fef08a;
+        color: #1a1a1a;
+        font-family: "Times New Roman", "Bodoni 72", serif;
+      }
+      body {
+        padding: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      .halftone {
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          rgba(220, 38, 38, 0.18) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 14px 14px;
+        pointer-events: none;
+      }
+      .tape-yellow {
+        position: absolute;
+        top: 36px;
+        right: 80px;
+        background: #fff;
+        color: #000;
+        padding: 8px 24px;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-weight: 900;
+        font-size: 14px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        transform: rotate(4deg);
+        border: 2px solid #000;
+        box-shadow: 4px 4px 0 #dc2626;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .eyebrow {
+        font-family: -apple-system, "Inter", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #dc2626;
+        margin-bottom: 24px;
+      }
+      .eyebrow::before,
+      .eyebrow::after {
+        content: "——";
+        margin: 0 12px;
+        color: #1a1a1a;
+      }
+      h1 {
+        font-size: 172px;
+        font-weight: 900;
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+        color: #1a1a1a;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+      h1 .strike {
+        position: relative;
+        color: #dc2626;
+      }
+      h1 .strike::after {
+        content: "";
+        position: absolute;
+        left: -4%;
+        right: -4%;
+        top: 48%;
+        height: 14px;
+        background: #1a1a1a;
+        transform: rotate(-3deg);
+      }
+      .lede {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #1a1a1a;
+        max-width: 880px;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-style: normal;
+      }
+      .lede strong {
+        font-weight: 900;
+      }
+      .foot {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        font-family: -apple-system, "Inter", sans-serif;
+        font-size: 14px;
+        color: #525252;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="halftone"></div>
+    <div class="tape-yellow">Hot Take #001</div>
+    <div class="content">
+      <div class="eyebrow">unsolicited but loud</div>
+      <h1>Most "AI agents"<br />are <span class="strike">demos.</span></h1>
+      <div class="lede">
+        <strong>I'm running 9 in production.</strong> They ship code while I'm
+        in traffic. There is a difference.
+      </div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amirkazemkhani.com</div>
+      <div>SWIPE →</div>
+    </div>
+  </body>
+</html>

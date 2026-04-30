@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Helvetica Neue", "Inter", sans-serif;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fafaf7;
+      }
+      body {
+        padding: 64px;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 {
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin-bottom: 36px;
+        text-transform: uppercase;
+        color: #000;
+      }
+      h1 em {
+        font-style: italic;
+        background: linear-gradient(135deg, #0ea5e9, #dc2626);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .scoreboard {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        flex: 1;
+      }
+      .col {
+        padding: 36px 32px;
+        border: 3px solid #000;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+      .col.gpt {
+        background: #0c4a6e;
+        color: #fff;
+        border-color: #0c4a6e;
+      }
+      .col.claude {
+        background: #7f1d1d;
+        color: #fff;
+        border-color: #7f1d1d;
+      }
+      .col-name {
+        font-size: 22px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      .col.gpt .col-name {
+        color: #7dd3fc;
+      }
+      .col.claude .col-name {
+        color: #fca5a5;
+      }
+      .score {
+        font-size: 128px;
+        font-weight: 900;
+        line-height: 0.85;
+        margin-bottom: 18px;
+        letter-spacing: -0.05em;
+      }
+      .col.gpt .score {
+        color: #7dd3fc;
+      }
+      .col.claude .score {
+        color: #fca5a5;
+      }
+      .wins {
+        list-style: none;
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 600;
+      }
+      .wins li {
+        padding: 6px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+        display: flex;
+        gap: 8px;
+      }
+      .wins li:last-child {
+        border-bottom: none;
+      }
+      .wins li::before {
+        content: "+";
+        font-weight: 900;
+        flex-shrink: 0;
+        width: 18px;
+      }
+      .col.gpt .wins li::before {
+        color: #22d3ee;
+      }
+      .col.claude .wins li::before {
+        color: #fde047;
+      }
+      .foot {
+        font-size: 14px;
+        color: #525252;
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The <em>scoreboard</em> after 5 days.</h1>
+    <div class="scoreboard">
+      <div class="col gpt">
+        <div class="col-name">GPT-5.5</div>
+        <div class="score">3</div>
+        <ul class="wins">
+          <li>Cleaner code one-shots</li>
+          <li>~30% faster on simple completions</li>
+          <li>Computer use built-in</li>
+        </ul>
+      </div>
+      <div class="col claude">
+        <div class="col-name">CLAUDE OPUS 4.7</div>
+        <div class="score">4</div>
+        <ul class="wins">
+          <li>1M context window</li>
+          <li>First-party Telegram + iMessage channels</li>
+          <li>Stable tool use across long sessions</li>
+          <li>Subscription unlimited (Max plan)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <div>@amirhkazemkhani · amirkazemkhani.com</div>
+      <div>02 / 03</div>
+    </div>
+  </body>
+</html>
