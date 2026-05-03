@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #ffffff;
+        font-family: "Inter", "Helvetica Neue", sans-serif;
+        color: #1f2937;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 80px;
+        justify-content: space-between;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 36px;
+      }
+      .header-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #10b981;
+      }
+      .header-sub {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: #9ca3af;
+        letter-spacing: 0.08em;
+      }
+      .wiring {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+        justify-content: center;
+      }
+      .wire-row {
+        display: grid;
+        grid-template-columns: 200px 24px 1fr;
+        gap: 0 20px;
+        padding: 22px 0;
+        border-bottom: 1px solid #f3f4f6;
+        align-items: center;
+      }
+      .wire-row:first-child {
+        border-top: 2px solid #111827;
+      }
+      .wire-node {
+        background: #f3f4f6;
+        border: 1.5px solid #e5e7eb;
+        padding: 10px 16px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        font-weight: 700;
+        color: #111827;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+      .wire-node.highlight {
+        background: #ecfdf5;
+        border-color: #10b981;
+        color: #10b981;
+      }
+      .wire-arrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 18px;
+        color: #10b981;
+        font-weight: 700;
+        text-align: center;
+      }
+      .wire-desc {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .wire-title {
+        font-size: 17px;
+        font-weight: 700;
+        color: #111827;
+        line-height: 1.2;
+      }
+      .wire-detail {
+        font-size: 14px;
+        font-weight: 300;
+        color: #6b7280;
+        line-height: 1.4;
+      }
+      .wire-detail strong {
+        color: #374151;
+        font-weight: 600;
+      }
+      .wire-tag {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: #10b981;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-top: 4px;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1.5px solid #e5e7eb;
+        padding-top: 18px;
+      }
+      .foot-handle {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        font-weight: 500;
+        color: #6b7280;
+        letter-spacing: 0.04em;
+      }
+      .foot-page {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 13px;
+        color: #d1d5db;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-label">Wiring diagram</div>
+      <div class="header-sub">4 nodes · full loop · $0/mo extra</div>
+    </div>
+    <div class="wiring">
+      <div class="wire-row">
+        <div class="wire-node highlight">INPUT</div>
+        <div class="wire-arrow">→</div>
+        <div class="wire-desc">
+          <div class="wire-title">AirPods → Whisper.cpp (local)</div>
+          <div class="wire-detail">
+            Voice captured via mic.
+            <strong>Whisper.cpp transcribes on-device</strong> — no cloud, no
+            latency, no privacy leak. Raw text out.
+          </div>
+          <div class="wire-tag">
+            // open-source · runs on M-series · &lt;200ms
+          </div>
+        </div>
+      </div>
+      <div class="wire-row">
+        <div class="wire-node">ROUTING</div>
+        <div class="wire-arrow">→</div>
+        <div class="wire-desc">
+          <div class="wire-title">Telegram bot → Claude API</div>
+          <div class="wire-detail">
+            Transcribed text hits a Telegram bot. Bot forwards to
+            <strong>Claude Code via API</strong> with system prompt + context.
+            Stateless per message.
+          </div>
+          <div class="wire-tag">// telegram free tier · claude credits</div>
+        </div>
+      </div>
+      <div class="wire-row">
+        <div class="wire-node">OUTPUT</div>
+        <div class="wire-arrow">→</div>
+        <div class="wire-desc">
+          <div class="wire-title">Claude Code → git push / file edit</div>
+          <div class="wire-detail">
+            Claude executes the instruction:
+            <strong
+              >writes code, edits files, drafts commit messages, runs shell
+              commands.</strong
+            >
+            Results logged to stdout.
+          </div>
+          <div class="wire-tag">// claude-code cli · bash tool surface</div>
+        </div>
+      </div>
+      <div class="wire-row">
+        <div class="wire-node">FEEDBACK</div>
+        <div class="wire-arrow">→</div>
+        <div class="wire-desc">
+          <div class="wire-title">Telegram reply → macOS say (TTS)</div>
+          <div class="wire-detail">
+            Claude's response sent back via Telegram.
+            <strong>macOS `say` reads it aloud to AirPods.</strong> Full loop —
+            eyes-free, hands-free.
+          </div>
+          <div class="wire-tag">// macos built-in · zero extra install</div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="foot-handle">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="foot-page">02 / 03</div>
+    </div>
+  </body>
+</html>

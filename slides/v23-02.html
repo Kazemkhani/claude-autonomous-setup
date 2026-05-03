@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700;900&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      body {
+        display: grid;
+        grid-template-columns: 480px 1fr;
+        font-family: "DM Sans", "Helvetica Neue", sans-serif;
+      }
+      .left {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 72px 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .right {
+        background: #f5f0e8;
+        color: #1a1a1a;
+        padding: 72px 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .eyebrow {
+        font-family: "DM Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 32px;
+      }
+      .left .eyebrow {
+        color: #4ade80;
+      }
+      .right .eyebrow {
+        color: #888888;
+      }
+      .step-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .step {
+        padding: 24px 0;
+        border-bottom: 1px solid #2e2e2e;
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        gap: 20px;
+        align-items: start;
+      }
+      .step:first-child {
+        border-top: 1px solid #2e2e2e;
+      }
+      .step-num {
+        font-family: "DM Mono", monospace;
+        font-size: 13px;
+        color: #4ade80;
+        font-weight: 500;
+        padding-top: 3px;
+      }
+      .step-body {
+      }
+      .step-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 6px;
+        line-height: 1.2;
+      }
+      .step-detail {
+        font-size: 15px;
+        color: #888888;
+        line-height: 1.5;
+        font-weight: 300;
+      }
+      .step-detail strong {
+        color: #4ade80;
+        font-weight: 700;
+      }
+      .math-panel {
+        background: #111111;
+        padding: 28px 32px;
+        margin-top: 32px;
+      }
+      .math-label {
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        color: #555555;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .math-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 17px;
+        padding: 8px 0;
+        border-bottom: 1px solid #1e1e1e;
+      }
+      .math-line .desc {
+        color: #888888;
+        font-weight: 300;
+        font-size: 15px;
+      }
+      .math-line .val {
+        color: #ffffff;
+        font-weight: 700;
+        font-family: "DM Mono", monospace;
+      }
+      .math-line .val.green {
+        color: #4ade80;
+      }
+      .math-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 20px;
+        padding-top: 16px;
+        font-weight: 700;
+      }
+      .math-total .desc {
+        color: #ffffff;
+      }
+      .math-total .val {
+        color: #4ade80;
+        font-family: "DM Mono", monospace;
+        font-size: 24px;
+      }
+      .right-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .before-label {
+        font-family: "DM Mono", monospace;
+        font-size: 13px;
+        color: #888888;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .before-item {
+        padding: 16px 0;
+        border-bottom: 1px solid #d4cfc6;
+        font-size: 18px;
+        color: #333333;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .before-item .crossed {
+        text-decoration: line-through;
+        color: #aaaaaa;
+      }
+      .before-item .replaced {
+        color: #16a34a;
+        font-weight: 700;
+      }
+      .after-block {
+        margin-top: 32px;
+        background: #1a1a1a;
+        padding: 24px 28px;
+      }
+      .after-block .label {
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        color: #4ade80;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .after-block .text {
+        font-size: 18px;
+        color: #f5f0e8;
+        line-height: 1.5;
+      }
+      .after-block .text strong {
+        color: #4ade80;
+      }
+      .foot-left {
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        color: #555555;
+        letter-spacing: 0.05em;
+      }
+      .foot-right {
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        color: #888888;
+        letter-spacing: 0.05em;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div>
+        <div class="eyebrow">Before / After</div>
+        <div class="step-list">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-body">
+              <div class="step-title">The problem</div>
+              <div class="step-detail">
+                Manual callbacks. 2 staff members.
+                <strong>3+ hours/day</strong> chasing no-shows and reminders.
+                Revenue leaking on every missed rebook.
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-body">
+              <div class="step-title">What changed</div>
+              <div class="step-detail">
+                Voice agent handles
+                <strong>all booking reminders + rebook calls</strong>. Calls 24h
+                before session. Handles reschedule objections. Logs outcomes to
+                booking system live.
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-body">
+              <div class="step-title">What it costs</div>
+              <div class="step-detail">
+                One voice agent subscription.
+                <strong>ROI positive in week 2.</strong> No hiring. No training.
+                No sick days.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="math-panel">
+          <div class="math-label">Monthly delta</div>
+          <div class="math-line">
+            <span class="desc">Staff time recovered (3h × 22 days)</span>
+            <span class="val green">+66 hrs</span>
+          </div>
+          <div class="math-line">
+            <span class="desc">No-show sessions recovered</span>
+            <span class="val green">+40%</span>
+          </div>
+          <div class="math-line">
+            <span class="desc">New hire cost</span>
+            <span class="val">$0</span>
+          </div>
+          <div class="math-total">
+            <span class="desc">Net result</span>
+            <span class="val">+Revenue, −Overhead</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot-left">@amirhkazemkhani · amirkazemkhani.com</div>
+    </div>
+    <div class="right">
+      <div class="right-content">
+        <div class="before-label">What they replaced</div>
+        <div class="before-item">
+          <span class="crossed">Manual reminder calls</span><br />
+          <span class="replaced">→ Voice agent, 24h automated</span>
+        </div>
+        <div class="before-item">
+          <span class="crossed">Staff chasing cancellations</span><br />
+          <span class="replaced">→ Rebook flow in the same call</span>
+        </div>
+        <div class="before-item">
+          <span class="crossed">Outcome tracked on paper</span><br />
+          <span class="replaced">→ Live log to booking system</span>
+        </div>
+        <div class="after-block">
+          <div class="label">The real number</div>
+          <div class="text">
+            <strong>ROI in week 2.</strong> Not month 6. Not after hiring. Week
+            2 — because the first rebooked sessions covered the subscription
+            cost.
+          </div>
+        </div>
+      </div>
+      <div class="foot-right">02 / 03</div>
+    </div>
+  </body>
+</html>

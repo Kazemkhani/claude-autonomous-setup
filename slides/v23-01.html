@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;700;900&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      body {
+        display: grid;
+        grid-template-columns: 480px 1fr;
+        font-family: "DM Sans", "Helvetica Neue", sans-serif;
+      }
+      .left {
+        background: #1a1a1a;
+        color: #ffffff;
+        padding: 72px 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .right {
+        background: #f5f0e8;
+        color: #1a1a1a;
+        padding: 72px 56px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .eyebrow {
+        font-family: "DM Mono", monospace;
+        font-size: 13px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+      .left .eyebrow {
+        color: #4ade80;
+      }
+      .right .eyebrow {
+        color: #888888;
+      }
+      .big-number {
+        font-size: 120px;
+        font-weight: 900;
+        line-height: 0.85;
+        letter-spacing: -0.05em;
+        color: #4ade80;
+        margin: 20px 0 16px;
+      }
+      .big-label {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.3;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .context {
+        font-size: 18px;
+        color: #aaaaaa;
+        line-height: 1.5;
+        margin-top: 16px;
+        font-weight: 300;
+      }
+      .divider {
+        width: 40px;
+        height: 3px;
+        background: #4ade80;
+        margin: 28px 0;
+      }
+      .stat-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+      .stat-item {
+      }
+      .stat-value {
+        font-size: 52px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #1a1a1a;
+      }
+      .stat-value.neg {
+        color: #dc2626;
+      }
+      .stat-value.pos {
+        color: #16a34a;
+      }
+      .stat-desc {
+        font-size: 17px;
+        color: #555555;
+        margin-top: 4px;
+        line-height: 1.4;
+        font-weight: 400;
+      }
+      .stat-rule {
+        width: 100%;
+        height: 1px;
+        background: #d4cfc6;
+        margin-top: 20px;
+      }
+      .foot-left {
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        color: #555555;
+        letter-spacing: 0.05em;
+      }
+      .foot-right {
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        color: #888888;
+        letter-spacing: 0.05em;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div>
+        <div class="eyebrow">Client outcome · UAE</div>
+        <div class="big-number">$0</div>
+        <div class="big-label">In new<br />sales hires.</div>
+        <div class="context">
+          One boutique wellness studio.<br />
+          UAE market. One voice agent.<br />
+          30 days.
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="foot-left">@amirhkazemkhani · amirkazemkhani.com</div>
+    </div>
+    <div class="right">
+      <div>
+        <div class="eyebrow">The results</div>
+        <div class="stat-stack">
+          <div class="stat-item">
+            <div class="stat-value neg">−40%</div>
+            <div class="stat-desc">
+              No-show rate. Bookings that went empty — halved.
+            </div>
+            <div class="stat-rule"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value pos">+35%</div>
+            <div class="stat-desc">
+              Rebook rate on cancellations. Revenue that was being left on the
+              table.
+            </div>
+            <div class="stat-rule"></div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">3 hrs</div>
+            <div class="stat-desc">
+              Staff time reclaimed per day. Previously spent on manual reminder
+              calls.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot-right">01 / 03</div>
+    </div>
+  </body>
+</html>

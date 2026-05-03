@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #ffffff;
+        font-family: "Space Grotesk", "Helvetica Neue", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .top-band {
+        background: #111111;
+        height: 18px;
+        width: 100%;
+      }
+      .accent-band {
+        background: #f97316;
+        height: 8px;
+        width: 100%;
+      }
+      .main {
+        flex: 1;
+        padding: 48px 72px 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .section-label {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #111111;
+        margin-bottom: 32px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-label::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 3px;
+        background: #f97316;
+      }
+      .headlines {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+      }
+      .headline-item {
+        display: flex;
+        gap: 28px;
+        padding: 28px 0;
+        border-bottom: 1.5px solid #dddddd;
+      }
+      .headline-item:first-child {
+        border-top: 1.5px solid #111111;
+      }
+      .num {
+        font-family: "Space Mono", monospace;
+        font-size: 44px;
+        font-weight: 700;
+        color: #f97316;
+        line-height: 1;
+        min-width: 60px;
+        padding-top: 4px;
+      }
+      .headline-body {
+        flex: 1;
+      }
+      .headline-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #111111;
+        line-height: 1.2;
+        margin-bottom: 10px;
+      }
+      .headline-why {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        color: #777777;
+        line-height: 1.5;
+      }
+      .headline-why strong {
+        color: #f97316;
+        font-weight: 700;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #111111;
+        padding-top: 18px;
+      }
+      .foot-handle {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        color: #111111;
+        letter-spacing: 0.04em;
+      }
+      .foot-page {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        color: #888888;
+        letter-spacing: 0.1em;
+      }
+      .bottom-bands {
+        display: flex;
+      }
+      .bottom-bands .b1 {
+        background: #f97316;
+        height: 8px;
+        flex: 1;
+      }
+      .bottom-bands .b2 {
+        background: #111111;
+        height: 8px;
+        flex: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-band"></div>
+    <div class="accent-band"></div>
+    <div class="main">
+      <div class="section-label">Ranked — most signal to least</div>
+      <div class="headlines">
+        <div class="headline-item">
+          <div class="num">01</div>
+          <div class="headline-body">
+            <div class="headline-title">
+              Anthropic releases Claude 4 with extended tool-use context window
+            </div>
+            <div class="headline-why">
+              Why it matters:
+              <strong>longer context = fewer agent resets mid-task.</strong> Ops
+              workflows that were breaking at 100K tokens now have headroom.
+            </div>
+          </div>
+        </div>
+        <div class="headline-item">
+          <div class="num">02</div>
+          <div class="headline-body">
+            <div class="headline-title">
+              Google DeepMind's Agent Framework hits open-source — enterprise
+              licence free
+            </div>
+            <div class="headline-why">
+              Why it matters: <strong>commoditises the plumbing.</strong> Your
+              edge is domain knowledge + integrations, not the agent scaffolding
+              itself.
+            </div>
+          </div>
+        </div>
+        <div class="headline-item">
+          <div class="num">03</div>
+          <div class="headline-body">
+            <div class="headline-title">
+              Abu Dhabi's ADIO launches $200M AI adoption fund for SMEs
+            </div>
+            <div class="headline-why">
+              Why it matters:
+              <strong>UAE buyers now have budget and mandate.</strong> If you
+              sell AI to SMEs here, the sales cycle just got shorter.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="foot-handle">@amirhkazemkhani · amirkazemkhani.com</div>
+        <div class="foot-page">02 / 03</div>
+      </div>
+    </div>
+    <div class="bottom-bands">
+      <div class="b1"></div>
+      <div class="b2"></div>
+    </div>
+  </body>
+</html>

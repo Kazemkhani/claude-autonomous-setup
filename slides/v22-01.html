@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0d0d0d;
+        font-family: "JetBrains Mono", "Courier New", monospace;
+        color: #00ff41;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 72px;
+        position: relative;
+      }
+      /* scanline overlay */
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(0, 255, 65, 0.03) 3px,
+          rgba(0, 255, 65, 0.03) 4px
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .prompt-bar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 15px;
+        color: #888888;
+        margin-bottom: 48px;
+      }
+      .prompt-bar .user {
+        color: #00ff41;
+        font-weight: 700;
+      }
+      .prompt-bar .at {
+        color: #888888;
+      }
+      .prompt-bar .cmd {
+        color: #ffffff;
+      }
+      .terminal-window {
+        border: 1px solid #1a3a1a;
+        background: #0a0a0a;
+        padding: 32px 40px;
+        margin-bottom: 40px;
+        flex: 1;
+      }
+      .window-bar {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 28px;
+        align-items: center;
+      }
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .dot-r {
+        background: #3a1a1a;
+      }
+      .dot-y {
+        background: #3a3a1a;
+      }
+      .dot-g {
+        background: #1a3a1a;
+      }
+      .window-title {
+        font-size: 12px;
+        color: #444444;
+        margin-left: 12px;
+        letter-spacing: 0.1em;
+      }
+      .git-cmd {
+        font-size: 16px;
+        color: #888888;
+        margin-bottom: 24px;
+      }
+      .git-cmd .dollar {
+        color: #00ff41;
+        margin-right: 8px;
+      }
+      .git-cmd .command {
+        color: #ffffff;
+      }
+      .commit-line {
+        display: flex;
+        gap: 16px;
+        font-size: 17px;
+        line-height: 1.8;
+        align-items: baseline;
+      }
+      .commit-hash {
+        color: #f59e0b;
+        font-weight: 700;
+        min-width: 72px;
+      }
+      .commit-time {
+        color: #444444;
+        font-size: 13px;
+        min-width: 96px;
+      }
+      .commit-msg {
+        color: #00ff41;
+      }
+      .headline-block {
+        margin-bottom: 32px;
+      }
+      .headline-label {
+        font-size: 13px;
+        color: #444444;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1.1;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+      }
+      h1 .green {
+        color: #00ff41;
+      }
+      .sub {
+        font-size: 20px;
+        color: #888888;
+        margin-top: 16px;
+        line-height: 1.5;
+      }
+      .sub strong {
+        color: #ffffff;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 24px;
+        border-top: 1px solid #1a3a1a;
+        font-size: 13px;
+        color: #444444;
+      }
+      .foot .handle {
+        color: #00ff41;
+        font-weight: 700;
+      }
+      .foot .page {
+        color: #444444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div>
+        <div class="prompt-bar">
+          <span class="user">ahk</span>
+          <span class="at">@</span>
+          <span class="cmd">mac-mini</span>
+          <span>~</span>
+          <span style="color: #444">▸</span>
+          <span style="color: #ffffff"
+            >git log --oneline --since="yesterday"</span
+          >
+        </div>
+        <div class="terminal-window">
+          <div class="window-bar">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+            <div class="window-title">zsh — git log</div>
+          </div>
+          <div class="git-cmd">
+            <span class="dollar">$</span>
+            <span class="command">git log --oneline --since="6 hours ago"</span>
+          </div>
+          <div class="commit-line">
+            <span class="commit-hash">a3f8c12</span>
+            <span class="commit-time">02:14 UAE</span>
+            <span class="commit-msg"
+              >fix: patch auth token refresh edge case</span
+            >
+          </div>
+          <div class="commit-line">
+            <span class="commit-hash">d91e4b7</span>
+            <span class="commit-time">04:07 UAE</span>
+            <span class="commit-msg"
+              >chore: bump dependencies, remove 3 stale packages</span
+            >
+          </div>
+          <div class="commit-line">
+            <span class="commit-hash">8c2a059</span>
+            <span class="commit-time">05:51 UAE</span>
+            <span class="commit-msg"
+              >test: add regression coverage for voice handoff path</span
+            >
+          </div>
+        </div>
+        <div class="headline-block">
+          <div class="headline-label">// output logged while I slept</div>
+          <h1>
+            <span class="green">3 PRs merged</span><br />before 9am.<br />Zero
+            engineers awake.
+          </h1>
+          <div class="sub">
+            Not a demo. <strong>Production logs. Real timestamps.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="handle">@amirhkazemkhani · amirkazemkhani.com</span>
+        <span class="page">01 / 03</span>
+      </div>
+    </div>
+  </body>
+</html>

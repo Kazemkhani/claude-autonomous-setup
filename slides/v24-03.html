@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #1e1b4b;
+        font-family: "Inter", "Helvetica Neue", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 80px 88px;
+        justify-content: space-between;
+        position: relative;
+      }
+      body::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 20% 80%,
+          rgba(99, 102, 241, 0.12) 0%,
+          transparent 55%
+        );
+        pointer-events: none;
+      }
+      .tag {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #4338ca;
+        position: relative;
+        z-index: 1;
+      }
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 48px;
+        position: relative;
+        z-index: 1;
+      }
+      .manifesto {
+        font-size: 80px;
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        color: #fafafa;
+      }
+      .manifesto .amber {
+        color: #f59e0b;
+      }
+      .manifesto .indigo {
+        color: #818cf8;
+      }
+      .rule {
+        width: 80px;
+        height: 4px;
+        background: #f59e0b;
+      }
+      .sub {
+        font-size: 24px;
+        font-weight: 300;
+        color: #a5b4fc;
+        line-height: 1.5;
+        max-width: 800px;
+      }
+      .sub strong {
+        color: #fafafa;
+        font-weight: 700;
+      }
+      .cta-block {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .cta-text {
+        font-size: 20px;
+        font-weight: 700;
+        color: #fafafa;
+      }
+      .cta-url {
+        background: #f59e0b;
+        color: #1e1b4b;
+        padding: 14px 28px;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        border-top: 1px solid #312e81;
+        padding-top: 24px;
+      }
+      .foot-handle {
+        font-size: 14px;
+        font-weight: 700;
+        color: #6366f1;
+        letter-spacing: 0.05em;
+      }
+      .foot-page {
+        font-size: 14px;
+        color: #4338ca;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tag">The edge</div>
+    <div class="hero">
+      <div class="manifesto">
+        Slow<br />
+        <span class="amber">thinking.</span><br />
+        Fast<br />
+        <span class="indigo">shipping.</span>
+      </div>
+      <div class="rule"></div>
+      <div class="sub">
+        That's the edge.<br />
+        <strong>Not velocity. Precision.</strong> Know exactly what you're
+        building before you write line one. Then ship it faster than anyone who
+        had to undo three wrong turns.
+      </div>
+      <div class="cta-block">
+        <div class="cta-text">More at</div>
+        <div class="cta-url">amirkazemkhani.com</div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="foot-handle">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="foot-page">03 / 03</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #fafafa;
+        font-family: "Inter", "Helvetica Neue", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 80px;
+        justify-content: space-between;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+      }
+      .header-label {
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: #6366f1;
+      }
+      .header-context {
+        font-size: 13px;
+        color: #9ca3af;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .stances {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+      }
+      .stance {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid #e5e7eb;
+        align-items: start;
+      }
+      .stance:first-child {
+        border-top: 2px solid #1e1b4b;
+      }
+      .num {
+        font-size: 32px;
+        font-weight: 900;
+        color: #f59e0b;
+        line-height: 1;
+        padding-top: 2px;
+      }
+      .stance-body {
+      }
+      .claim {
+        font-size: 22px;
+        font-weight: 900;
+        color: #111827;
+        line-height: 1.2;
+        margin-bottom: 6px;
+        letter-spacing: -0.01em;
+      }
+      .support {
+        font-size: 15px;
+        font-weight: 300;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+      .support strong {
+        color: #374151;
+        font-weight: 700;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 20px;
+      }
+      .foot-handle {
+        font-size: 13px;
+        font-weight: 700;
+        color: #9ca3af;
+        letter-spacing: 0.05em;
+      }
+      .foot-page {
+        font-size: 13px;
+        color: #d1d5db;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-label">5 contrarian stances</div>
+      <div class="header-context">Amir H. Kazemkhani · 2026</div>
+    </div>
+    <div class="stances">
+      <div class="stance">
+        <div class="num">01</div>
+        <div class="stance-body">
+          <div class="claim">
+            Slow down on features. Speed up on architecture.
+          </div>
+          <div class="support">
+            Shipping the wrong abstraction in AI is
+            <strong>10× harder to undo</strong> than in a normal SaaS. The state
+            machine you choose on day 3 is the one you debug in month 6.
+          </div>
+        </div>
+      </div>
+      <div class="stance">
+        <div class="num">02</div>
+        <div class="stance-body">
+          <div class="claim">
+            Don't demo things you haven't run in production.
+          </div>
+          <div class="support">
+            AI demos lie. The failure modes only appear
+            <strong>under real load, real data, real users</strong> who say
+            things your test cases didn't cover.
+          </div>
+        </div>
+      </div>
+      <div class="stance">
+        <div class="num">03</div>
+        <div class="stance-body">
+          <div class="claim">Fewer agents. More observability.</div>
+          <div class="support">
+            Every agent you add is a surface that can fail silently.
+            <strong
+              >A 3-agent system you can debug beats a 9-agent system you
+              can't.</strong
+            >
+          </div>
+        </div>
+      </div>
+      <div class="stance">
+        <div class="num">04</div>
+        <div class="stance-body">
+          <div class="claim">Log everything, even the calls that succeed.</div>
+          <div class="support">
+            Success logs tell you what good looks like.
+            <strong
+              >Without them, you can't tell if a regression broke a
+              previously-working path.</strong
+            >
+          </div>
+        </div>
+      </div>
+      <div class="stance">
+        <div class="num">05</div>
+        <div class="stance-body">
+          <div class="claim">
+            Ship slow. Learn fast. The cadence is not the same thing.
+          </div>
+          <div class="support">
+            Deliberate shipping + <strong>fast feedback loops</strong> beats
+            "move fast" every time for AI systems that handle real money or real
+            customers.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="foot-handle">@amirhkazemkhani · amirkazemkhani.com</div>
+      <div class="foot-page">02 / 03</div>
+    </div>
+  </body>
+</html>
