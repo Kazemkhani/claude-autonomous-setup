@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0d0d0d;
+        font-family: "JetBrains Mono", "Courier New", monospace;
+        color: #00ff41;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 72px;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(0, 255, 65, 0.03) 3px,
+          rgba(0, 255, 65, 0.03) 4px
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 48px;
+      }
+      .blink-cursor::after {
+        content: "█";
+        animation: blink 1s step-end infinite;
+        color: #00ff41;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      .takeaway {
+        font-size: 68px;
+        font-weight: 800;
+        line-height: 1.05;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+      }
+      .takeaway .green {
+        color: #00ff41;
+      }
+      .takeaway .dim {
+        color: #444444;
+        font-size: 52px;
+      }
+      .sub-block {
+        border-left: 3px solid #00ff41;
+        padding-left: 24px;
+      }
+      .sub-block p {
+        font-size: 20px;
+        color: #888888;
+        line-height: 1.6;
+      }
+      .sub-block p strong {
+        color: #ffffff;
+      }
+      .cta-block {
+        background: #0a1a0a;
+        border: 1px solid #1a3a1a;
+        padding: 28px 36px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cta-text {
+        font-size: 18px;
+        color: #888888;
+      }
+      .cta-text strong {
+        color: #00ff41;
+        font-size: 22px;
+      }
+      .cta-url {
+        font-size: 18px;
+        font-weight: 700;
+        color: #f59e0b;
+        letter-spacing: 0.05em;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 24px;
+        border-top: 1px solid #1a3a1a;
+        font-size: 13px;
+      }
+      .foot .handle {
+        color: #00ff41;
+        font-weight: 700;
+      }
+      .foot .page {
+        color: #444444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="hero">
+        <div class="takeaway">
+          This is what<br />
+          <span class="green">autonomous</span><br />
+          looks like.<br />
+          <span class="dim">Not a demo.</span>
+        </div>
+        <div class="sub-block">
+          <p>
+            No engineer woke up to merge those PRs.<br />
+            <strong>No Slack notification. No standup. No manual review.</strong
+            ><br />
+            A state machine decided, tested, and shipped — while I slept.
+          </p>
+        </div>
+        <div class="cta-block">
+          <div class="cta-text">
+            Want to see how it's wired?<br /><strong
+              >Full architecture →</strong
+            >
+          </div>
+          <div class="cta-url">amirkazemkhani.com</div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="handle">@amirhkazemkhani · amirkazemkhani.com</span>
+        <span class="page">03 / 03</span>
+      </div>
+    </div>
+  </body>
+</html>

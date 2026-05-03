@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #ffffff;
+        font-family: "Space Grotesk", "Helvetica Neue", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .top-bar {
+        background: #111111;
+        height: 12px;
+        width: 100%;
+      }
+      .accent-bar {
+        background: #e11d48;
+        height: 6px;
+        width: 100%;
+      }
+      .main {
+        flex: 1;
+        padding: 64px 72px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .action-label {
+        font-family: "Space Mono", monospace;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #e11d48;
+      }
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 36px;
+      }
+      .action-block {
+        background: #111111;
+        color: #ffffff;
+        padding: 48px 52px;
+      }
+      .action-block .eyebrow {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        color: #e11d48;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .action-block h2 {
+        font-size: 44px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: #ffffff;
+        margin-bottom: 24px;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .action-block p {
+        font-size: 22px;
+        color: #aaaaaa;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+      .action-block p strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .cta-main {
+        font-size: 26px;
+        font-weight: 700;
+        color: #111111;
+        border-bottom: 4px solid #e11d48;
+        padding-bottom: 6px;
+      }
+      .cta-url {
+        font-family: "Space Mono", monospace;
+        font-size: 18px;
+        color: #e11d48;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #111111;
+        padding-top: 24px;
+      }
+      .foot-handle {
+        font-family: "Space Mono", monospace;
+        font-size: 14px;
+        font-weight: 700;
+        color: #111111;
+        letter-spacing: 0.05em;
+      }
+      .foot-page {
+        font-family: "Space Mono", monospace;
+        font-size: 14px;
+        color: #666666;
+        letter-spacing: 0.1em;
+      }
+      .bottom-bars {
+        display: flex;
+      }
+      .bottom-bars .b1 {
+        background: #111111;
+        height: 8px;
+        flex: 3;
+      }
+      .bottom-bars .b2 {
+        background: #e11d48;
+        height: 8px;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar"></div>
+    <div class="accent-bar"></div>
+    <div class="main">
+      <div class="action-label">// This week's action item</div>
+      <div class="hero">
+        <div class="action-block">
+          <div class="eyebrow">For sales teams + founders</div>
+          <h2>Audit your call-log compliance before Q3.</h2>
+          <p>
+            The UAE governance framework lands in Q3. If your voice agent isn't
+            logging intent, outcome, and handoff timestamp —
+            <strong>you're building a liability, not an asset.</strong>
+            Two hours now saves six months of retrofit.
+          </p>
+        </div>
+        <div class="cta-row">
+          <div class="cta-main">Full breakdown every week.</div>
+          <div class="cta-url">novalabs.ae</div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="foot-handle">@amirhkazemkhani · amirkazemkhani.com</div>
+        <div class="foot-page">03 / 03</div>
+      </div>
+    </div>
+    <div class="bottom-bars">
+      <div class="b1"></div>
+      <div class="b2"></div>
+    </div>
+  </body>
+</html>

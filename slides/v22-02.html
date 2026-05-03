@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0d0d0d;
+        font-family: "JetBrains Mono", "Courier New", monospace;
+        color: #00ff41;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        padding: 64px 72px;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(0, 255, 65, 0.03) 3px,
+          rgba(0, 255, 65, 0.03) 4px
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .section-header {
+        font-size: 13px;
+        color: #444444;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-bottom: 48px;
+      }
+      .section-header span {
+        color: #00ff41;
+      }
+      .agents {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+        justify-content: center;
+      }
+      .agent-row {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: 24px;
+        padding: 32px 0;
+        border-bottom: 1px solid #1a2a1a;
+        align-items: start;
+      }
+      .agent-row:first-child {
+        border-top: 1px solid #1a2a1a;
+      }
+      .agent-index {
+        font-size: 13px;
+        color: #444444;
+        font-weight: 700;
+        padding-top: 4px;
+      }
+      .agent-body {
+      }
+      .agent-name {
+        font-size: 24px;
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 10px;
+        letter-spacing: 0.02em;
+      }
+      .agent-name .tag {
+        font-size: 13px;
+        font-weight: 400;
+        color: #f59e0b;
+        margin-left: 12px;
+        letter-spacing: 0.1em;
+      }
+      .agent-action {
+        font-size: 18px;
+        color: #888888;
+        line-height: 1.5;
+      }
+      .agent-action strong {
+        color: #00ff41;
+      }
+      .agent-commit {
+        margin-top: 12px;
+        font-size: 14px;
+        color: #2a4a2a;
+        display: flex;
+        gap: 12px;
+      }
+      .agent-commit .hash {
+        color: #f59e0b;
+      }
+      .agent-commit .msg {
+        color: #3a5a3a;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 24px;
+        border-top: 1px solid #1a3a1a;
+        font-size: 13px;
+      }
+      .foot .handle {
+        color: #00ff41;
+        font-weight: 700;
+      }
+      .foot .page {
+        color: #444444;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="section-header">
+        // agents responsible — <span>3 of 9 active last night</span>
+      </div>
+      <div class="agents">
+        <div class="agent-row">
+          <div class="agent-index">01</div>
+          <div class="agent-body">
+            <div class="agent-name">
+              CEO Agent <span class="tag">DISPATCHED</span>
+            </div>
+            <div class="agent-action">
+              Woke at 01:58 UAE. Evaluated 4 open issues.
+              <strong>Dispatched security patch</strong> to QA agent with
+              priority flag. Back to standby in 3 min.
+            </div>
+            <div class="agent-commit">
+              <span class="hash">→ a3f8c12</span
+              ><span class="msg">fix: patch auth token refresh edge case</span>
+            </div>
+          </div>
+        </div>
+        <div class="agent-row">
+          <div class="agent-index">02</div>
+          <div class="agent-body">
+            <div class="agent-name">
+              QA Agent <span class="tag">REVIEWED</span>
+            </div>
+            <div class="agent-action">
+              Ran full regression suite.
+              <strong>14 tests passed. 0 failed.</strong> Approved PR at 03:44
+              UAE. Flagged one deprecated import — auto-resolved.
+            </div>
+            <div class="agent-commit">
+              <span class="hash">→ d91e4b7</span
+              ><span class="msg"
+                >chore: bump dependencies, remove 3 stale packages</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="agent-row">
+          <div class="agent-index">03</div>
+          <div class="agent-body">
+            <div class="agent-name">
+              Deploy Agent <span class="tag">MERGED</span>
+            </div>
+            <div class="agent-action">
+              Merged all 3 PRs to main.
+              <strong>Zero conflicts. Zero rollbacks.</strong> Sent Telegram
+              confirmation at 05:52 UAE. I read it with my morning coffee.
+            </div>
+            <div class="agent-commit">
+              <span class="hash">→ 8c2a059</span
+              ><span class="msg"
+                >test: add regression coverage for voice handoff path</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+        <span class="handle">@amirhkazemkhani · amirkazemkhani.com</span>
+        <span class="page">02 / 03</span>
+      </div>
+    </div>
+  </body>
+</html>

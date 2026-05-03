@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1080px;
+        overflow: hidden;
+        background: #ffffff;
+        font-family: "Space Grotesk", "Helvetica Neue", sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .top-band {
+        background: #111111;
+        height: 18px;
+        width: 100%;
+      }
+      .accent-band {
+        background: #f97316;
+        height: 8px;
+        width: 100%;
+      }
+      .main {
+        flex: 1;
+        padding: 56px 72px 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .action-label {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: #f97316;
+      }
+      .hero {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+      }
+      .action-block {
+        background: #111111;
+        color: #ffffff;
+        padding: 44px 52px;
+      }
+      .action-block .eyebrow {
+        font-family: "Space Mono", monospace;
+        font-size: 12px;
+        color: #f97316;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+      .action-block h2 {
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 1.1;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .action-block h2 .amber {
+        color: #f97316;
+      }
+      .action-block p {
+        font-size: 20px;
+        color: #aaaaaa;
+        line-height: 1.55;
+        font-weight: 400;
+      }
+      .action-block p strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+      .cta-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 2px solid #111111;
+        padding: 20px 28px;
+      }
+      .cta-left {
+        font-size: 22px;
+        font-weight: 700;
+        color: #111111;
+      }
+      .cta-right {
+        font-family: "Space Mono", monospace;
+        font-size: 18px;
+        color: #f97316;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 2px solid #111111;
+        padding-top: 20px;
+      }
+      .foot-handle {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        font-weight: 700;
+        color: #111111;
+        letter-spacing: 0.04em;
+      }
+      .foot-page {
+        font-family: "Space Mono", monospace;
+        font-size: 13px;
+        color: #888888;
+        letter-spacing: 0.1em;
+      }
+      .bottom-bands {
+        display: flex;
+      }
+      .bottom-bands .b1 {
+        background: #f97316;
+        height: 8px;
+        flex: 1;
+      }
+      .bottom-bands .b2 {
+        background: #111111;
+        height: 8px;
+        flex: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-band"></div>
+    <div class="accent-band"></div>
+    <div class="main">
+      <div class="action-label">// This week's action item</div>
+      <div class="hero">
+        <div class="action-block">
+          <div class="eyebrow">For ops teams + founders · Week of May 12</div>
+          <h2>
+            Apply now for<br /><span class="amber">ADIO's AI fund</span
+            ><br />before Q3 close.
+          </h2>
+          <p>
+            Abu Dhabi's $200M SME fund is real and the window is short.
+            <strong>If you're deploying AI in a UAE business,</strong> this is
+            non-dilutive capital that de-risks your proof-of-concept. The
+            application is 4 pages. The ROI math writes itself.
+          </p>
+        </div>
+        <div class="cta-row">
+          <div class="cta-left">Every week. 2 minutes. Signal only.</div>
+          <div class="cta-right">novalabs.ae</div>
+        </div>
+      </div>
+      <div class="foot">
+        <div class="foot-handle">@amirhkazemkhani · amirkazemkhani.com</div>
+        <div class="foot-page">03 / 03</div>
+      </div>
+    </div>
+    <div class="bottom-bands">
+      <div class="b1"></div>
+      <div class="b2"></div>
+    </div>
+  </body>
+</html>
